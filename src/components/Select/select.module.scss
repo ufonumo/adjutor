@@ -1,0 +1,27 @@
+.select {
+    padding: 0 36px 0 12px;
+    height: 43px;
+    width: 100%;
+    cursor: pointer;
+    color: var(--black);
+    background: var(--gray);
+    border-radius: 4px;
+    font-weight: 500;
+    border: none;
+    font-size: 14px;
+    line-height: 18px;
+    -webkit-appearance: none;
+    appearance: none;
+    &:focus-visible {
+        border: 1px solid var(--primary);
+        outline: 1px solid var(--primary);
+        background-color: var(--white);
+        border: none;
+    }
+    &__dropdown-icon {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

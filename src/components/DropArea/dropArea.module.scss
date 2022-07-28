@@ -1,0 +1,15 @@
+.container {
+    width: 100%;
+
+    .label {
+        display: block;
+        background-color: var(--gray);
+        padding: 20px;
+        border: 1px dashed #213f7d;
+        border-radius: 10px;
+        color: var(--primary);
+    }
+    .input {
+        display: none;
+    }
+}
