@@ -10,6 +10,8 @@ const Input = ({
     inputStyle,
     minLength,
     maxLength,
+    onChange,
+    value,
 }: InputProps): JSX.Element => {
     return (
         <>
@@ -26,6 +28,8 @@ const Input = ({
                     id={`${name}`}
                     maxLength={maxLength}
                     minLength={minLength}
+                    onChange={onChange}
+                    value={value}
                 />
             </div>
         </>

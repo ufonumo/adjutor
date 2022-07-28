@@ -1,0 +1,1 @@
+<DropArea name="drop" />
