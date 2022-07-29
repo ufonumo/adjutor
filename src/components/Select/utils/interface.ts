@@ -9,4 +9,7 @@ export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElemen
     style?: React.CSSProperties;
     onChange: React.ChangeEventHandler<HTMLSelectElement>;
     placeholder: string;
+    name: string;
+    label: string;
+    labelStyle?: React.CSSProperties;
 }

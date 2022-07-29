@@ -1,5 +1,6 @@
 .--primary,
-.--filter {
+.--filter,
+.--blue {
     background-color: var(--primary);
     color: var(--white);
     border: none;
@@ -18,7 +19,12 @@
     }
 }
 
-.--inactive {
+.--blue {
+    background-color: var(--overlay-blue);
+}
+
+.--inactive,
+button:disabled {
     background-color: var(--light-gray);
     color: var(--white);
     border: none;

@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes } from "react";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    variant: "primary" | "inactive" | "filter";
+    variant: "primary" | "inactive" | "filter" | "blue";
     style?: React.CSSProperties;
     isLoading?: boolean;
     iconLeft?: JSX.Element;

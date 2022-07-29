@@ -51,3 +51,57 @@
 .ant-select-selection-overflow .ant-select-selection-overflow-item .ant-select-selection-item {
     border-radius: 4rem;
 }
+
+.ant-steps-item-icon .ant-steps-icon {
+    display: none;
+}
+
+.header {
+    margin-bottom: 3.5rem;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 2rem;
+    }
+    h1 {
+        font-weight: 700;
+        font-size: 26px;
+        color: var(--primary);
+        margin: 0;
+        padding: 0;
+        @media screen and (max-width: 768px) {
+            font-size: 24px;
+        }
+    }
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--dark-gray);
+        @media screen and (max-width: 768px) {
+            font-size: 14px;
+        }
+    }
+}
+
+.error {
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+}
+
+.marginTop {
+    margin-top: 2rem;
+}
+
+.signUp {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: var(--light-gray);
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    a {
+        color: var(--primary);
+        font-weight: 600;
+    }
+}

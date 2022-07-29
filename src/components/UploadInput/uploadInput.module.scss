@@ -1,0 +1,32 @@
+.label {
+    display: block;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--black);
+    margin: 8px 0px;
+    font-weight: 400;
+}
+.input-container {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    color: var(--light-gray);
+    justify-content: space-between;
+    width: 100%;
+    padding: 18px 18px 16px 16px;
+    height: 43px;
+    position: static;
+    border: none;
+    background: var(--gray);
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+.input {
+    display: none;
+}
+.image {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+}

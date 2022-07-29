@@ -1,5 +1,6 @@
 import { Formik } from "formik";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import AuthLayout from "../../components/AuthLayout/authLayout";
 import Button from "../../components/Button/button";
 import Input from "../../components/Input/input";
@@ -13,7 +14,7 @@ const Login = () => {
     };
     return (
         <AuthLayout>
-            <div className={styles.header}>
+            <div className="header">
                 <h1>Welcome Back !</h1>
                 <p>Empowering the smartest lenders.</p>
             </div>
@@ -62,14 +63,17 @@ const Login = () => {
                         />
                         {errors.password && touched.password && errors.password}
 
-                        <p className={styles.forgotPassword}>Forgot Password ?</p>
+                        <Link to="/forgot-password">
+                            <p className={styles.forgotPassword}>Forgot Password ?</p>
+                        </Link>
 
                         <Button type="submit" variant="primary" disabled={isSubmitting}>
                             Log In
                         </Button>
 
                         <p className={styles.signUp}>
-                            <span>Don't have an account?</span> <a href="/signup">Sign Up</a>
+                            <span>Don't have an account?</span>{" "}
+                            <Link to="/signUp-create">Sign Up</Link>
                         </p>
                     </form>
                 )}

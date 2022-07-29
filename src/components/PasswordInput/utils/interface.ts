@@ -5,7 +5,7 @@ export interface PasswordInputProps {
     placeholder: string;
     inputStyle?: React.CSSProperties;
     labelStyle?: React.CSSProperties;
-    value: string;
+    value?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     togglePasswordVisibility: () => void;
     isShown: boolean;
