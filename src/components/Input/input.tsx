@@ -1,5 +1,5 @@
-import styles from "./input.module.scss";
-import { InputProps } from "./utils/interface";
+import styles from "./models/input.module.scss";
+import { InputProps } from "./models/interface";
 
 const Input = ({
     label,
@@ -14,7 +14,7 @@ const Input = ({
     value,
 }: InputProps): JSX.Element => {
     return (
-        <>
+        <div>
             <label style={labelStyle} className={styles["label"]} htmlFor={`${name}`}>
                 {label}
             </label>
@@ -32,7 +32,7 @@ const Input = ({
                     value={value}
                 />
             </div>
-        </>
+        </div>
     );
 };
 

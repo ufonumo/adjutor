@@ -1,6 +1,6 @@
 import { BsChevronDown } from "react-icons/bs";
-import styles from "./select.module.scss";
-import { IOption, SelectProps } from "./utils/interface";
+import styles from "./models/select.module.scss";
+import { IOption, SelectProps } from "./models/interface";
 
 const Select = ({
     className,

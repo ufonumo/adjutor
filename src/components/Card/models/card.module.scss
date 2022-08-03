@@ -1,0 +1,49 @@
+.--default {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    width: 100%;
+}
+.--purple {
+    background-color: var(--purple);
+    border-radius: 19px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    width: 100%;
+    color: var(--white);
+}
+.--blue {
+    background-color: var(--primary);
+    border-radius: 11px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    width: 100%;
+    color: var(--white);
+}
+.--yellow {
+    background-color: var(--yellow);
+    border-radius: 19px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    width: 100%;
+}
+
+.--offer {
+    background-color: var(--overlay-blue);
+    padding: 20px;
+    border-radius: 8px;
+}
+.imgContainer {
+    display: flex;
+    gap: 1rem;
+    .image {
+        width: 100%;
+        height: auto;
+    }
+    .subtitle {
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 16px;
+    }
+}

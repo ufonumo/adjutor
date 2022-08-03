@@ -1,6 +1,6 @@
 import { Table } from "antd";
-import { TableProps } from "./utils/interface";
-import styles from "./table.module.scss";
+import { TableProps } from "./models/interface";
+import styles from "./models/table.module.scss";
 import Button from "../Button/button";
 import filterIcon from "../../assets/icons/filter.svg";
 

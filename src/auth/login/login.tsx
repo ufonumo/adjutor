@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthLayout from "../../components/AuthLayout/authLayout";
 import Button from "../../components/Button/button";

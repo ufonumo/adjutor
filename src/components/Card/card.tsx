@@ -1,5 +1,5 @@
-import { CardProps } from "./utils/interface";
-import styles from "./card.module.scss";
+import { CardProps } from "./models/interface";
+import styles from "./models/card.module.scss";
 
 const Card = ({ className, variant, children, image, subtitle }: CardProps) => {
     return (
@@ -8,7 +8,7 @@ const Card = ({ className, variant, children, image, subtitle }: CardProps) => {
                 <img className={styles["image"]} src={image} alt="" />
                 <h6 className={styles.subtitle}>{subtitle}</h6>
             </div> */}
-            {children} card
+            {children}
         </div>
     );
 };

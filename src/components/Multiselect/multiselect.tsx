@@ -1,10 +1,21 @@
 import { Select } from "antd";
-import styles from "./multiselect.module.scss";
-import { multiSelectProps } from "./utils/interface";
+import styles from "./models/multiselect.module.scss";
+import { multiSelectProps } from "./models/interface";
 
-const MultiSelect = ({ placeholder, handleChange, children, icon }: multiSelectProps) => {
+const MultiSelect = ({
+    placeholder,
+    handleChange,
+    children,
+    icon,
+    labelStyle,
+    name,
+    label,
+}: multiSelectProps) => {
     return (
         <div>
+            <label style={labelStyle} className={styles["label"]} htmlFor={`${name}`}>
+                {label}
+            </label>
             <Select
                 mode="multiple"
                 style={{ width: "100%" }}

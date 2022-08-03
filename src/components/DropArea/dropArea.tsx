@@ -1,5 +1,5 @@
-import styles from "./dropArea.module.scss";
-import { DropAreaProps } from "./utils/interface";
+import styles from "./models/dropArea.module.scss";
+import { DropAreaProps } from "./models/interface";
 const DropArea = ({ name }: DropAreaProps) => {
     return (
         <div className={styles.container}>

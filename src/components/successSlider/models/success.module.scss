@@ -1,0 +1,39 @@
+.drawer_content {
+    margin-top: 3rem;
+
+    .success_container {
+        text-align: center;
+        margin-top: 5rem;
+        p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: #616161;
+            margin: 1.5rem 0;
+            padding: 0;
+        }
+    }
+    .button_container {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 2rem;
+        width: 90%;
+        .checkbox {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            .labelCheckbox {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 20px;
+                color: #9e9e9e;
+            }
+            .checkbox_container {
+                margin-top: 1rem;
+                border: 1px solid var(--primary);
+                cursor: pointer;
+            }
+        }
+    }
+}

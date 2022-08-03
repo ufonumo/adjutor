@@ -1,8 +1,8 @@
-import styles from "./authlayout.module.scss";
+import styles from "./models/authlayout.module.scss";
 import { ReactComponent as Logo } from "../../assets/images/login/logo.svg";
 import { ReactComponent as LoginImage } from "../../assets/images/login/random.svg";
 import { ReactComponent as MobileLogo } from "../../assets/images/login/lendsqr.svg";
-import { IAuthLayoutProps } from "./utils/interface";
+import { IAuthLayoutProps } from "./models/interface";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { TbHeadset } from "react-icons/tb";
 

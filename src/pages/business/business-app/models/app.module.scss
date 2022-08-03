@@ -1,0 +1,33 @@
+.container {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        .header_content {
+            h1 {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 43px;
+                color: var(--primary);
+                margin: 0.3rem 0;
+                padding: 0;
+            }
+            p {
+                font-style: normal;
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 24px;
+                color: #7a8cb1;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+}

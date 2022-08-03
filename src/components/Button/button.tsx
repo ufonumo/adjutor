@@ -1,5 +1,5 @@
-import styles from "./button.module.scss";
-import { ButtonProps } from "./utils/interface";
+import styles from "./models/button.module.scss";
+import { ButtonProps } from "./models/interface";
 
 const Button = ({
     style,

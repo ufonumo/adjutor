@@ -1,5 +1,5 @@
-import styles from "./passwordInput.module.scss";
-import { PasswordInputProps } from "./utils/interface";
+import styles from "./models/passwordInput.module.scss";
+import { PasswordInputProps } from "./models/interface";
 import { BsEyeSlash } from "react-icons/bs";
 
 const PasswordInput = ({

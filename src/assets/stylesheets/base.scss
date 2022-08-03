@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@200;300;400;500;600;700&display=swap");
 
 :root {
     --primary: #213f7d;
+    --deep-blue: #14264b;
     --gradient: linear-gradient(360deg, #023784 18.02%, #36d1dc 125.11%);
     --dashboardBg: #e5e5e5;
     --overlay-blue: #57d4d4;
@@ -32,14 +34,24 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Inter", sans-serif;
+    font-family: "Catamaran", sans-serif;
+    // font-family: "Inter", sans-serif;
+    color: inherit;
 }
+
+h1,
+h2,
+h3,
+h4 {
+    color: inherit;
+}
+
 .ant-tooltip-content .ant-tooltip-inner {
     border-radius: 4px;
 }
 
 .ant-select.ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    height: 43px;
+    height: 40px;
     border-radius: 4px;
     &:focus-visible {
         border: 1px solid var(--primary);
@@ -54,6 +66,54 @@
 
 .ant-steps-item-icon .ant-steps-icon {
     display: none;
+}
+
+@mixin needed {
+    width: fit-content;
+    color: var(--white);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 0 auto 1rem auto;
+    padding: 8px 10px;
+    border-radius: 11px;
+
+    p {
+        margin: 0;
+    }
+}
+
+@mixin yellowMixin {
+    width: fit-content;
+    color: var(--black);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 4rem auto 1rem auto;
+    padding: 8px 10px;
+    border-radius: 11px;
+
+    p {
+        margin: 0;
+    }
+}
+
+.light_blue {
+    background-color: var(--light-blue);
+    @include needed;
+}
+
+.light_yellow {
+    background-color: var(--light-yellow);
+
+    @include yellowMixin;
+}
+
+.light_purple {
+    background-color: var(--light-purple);
+    @include needed;
+    @include yellowMixin;
+    color: var(--white);
 }
 
 .header {
