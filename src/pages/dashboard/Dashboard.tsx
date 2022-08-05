@@ -5,11 +5,24 @@ import walletImg from "../../assets/icons/dashboard/wallet.svg";
 import addIcon from "../../assets/icons/dashboard/add.svg";
 
 import arrowIcon from "../../assets/icons/dashboard/arrow.svg";
-import { dashboardData } from "./models/dashboardData";
+import { columns, dashboardData, tableData } from "./models/dashboardData";
 import graphIcon from "../../assets/icons/dashboard/graph.svg";
 import Tables from "../../components/Table/tables";
+import Drawer from "../business/wallet/components/Drawer";
+import { useState } from "react";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const Dashboard = () => {
+    const [visible, setVisible] = useState(false);
+    const { width } = useWindowSize();
+
+    const showDrawer = () => {
+        setVisible(true);
+    };
+
+    const onClose = () => {
+        setVisible(false);
+    };
     return (
         <Layout pageTitle="Dashboard">
             <div className={styles.container}>
@@ -25,7 +38,7 @@ const Dashboard = () => {
                         </div>
                         <div className={styles.walletContainer}>
                             <h3>$ 0.00</h3>
-                            <div className={styles.subContainer}>
+                            <div className={styles.subContainer} onClick={showDrawer}>
                                 <img src={addIcon} alt="Add" />
                                 <p>Fund wallet</p>
                             </div>
@@ -55,8 +68,25 @@ const Dashboard = () => {
                         ))}
                     </div>
                 </div>
-                <Tables header="Recent API Calls" dataSource={[]} columns={[]} />
+
+                {width < 768 ? (
+                    <div className={styles.mobile_card_container}>
+                        {tableData.map((list, index) => (
+                            <Card variant="default" key={index}>
+                                <div className={styles.card_container_item} key={index}>
+                                    <h3>Method: {list.method}</h3>
+                                    <p>Status : {list.status}</p>
+                                    <p>URL: {list.url}</p>
+                                </div>
+                            </Card>
+                        ))}
+                    </div>
+                ) : (
+                    <Tables header="Recent API Calls" dataSource={tableData} columns={columns} />
+                )}
             </div>
+
+            {visible && <Drawer visible={visible} onClose={onClose} title="Fund Wallet" />}
         </Layout>
     );
 };

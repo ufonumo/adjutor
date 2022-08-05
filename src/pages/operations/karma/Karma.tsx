@@ -4,9 +4,12 @@ import styles from "./models/karma.module.scss";
 
 import { BsArrowUpCircle } from "react-icons/bs";
 import Tables from "../../../components/Table/tables";
-import { karmaData } from "./models/karmaData";
+import { karmaColumnData, karmaData, karmaDataSource } from "./models/karmaData";
+import useWindowSize from "../../../hooks/useWindowSize";
 
 const Karma = () => {
+    const { width } = useWindowSize();
+
     return (
         <Layout pageTitle="Karma">
             <div className={styles.container}>
@@ -29,7 +32,22 @@ const Karma = () => {
                     ))}
                 </div>
 
-                <Tables header="Karma" dataSource={[]} columns={[]} />
+                {width < 768 ? (
+                    <div className={styles.mobile_card_container}>
+                        {karmaDataSource.map((list, index) => (
+                            <Card variant="default" key={index}>
+                                <div className={styles.card_container_item} key={index}>
+                                    <h3>Report: {list.report}</h3>
+                                    <p>Type : {list.type}</p>
+                                    <p>Email: {list.email}</p>
+                                    <p>Approved on: {list.approved}</p>
+                                </div>
+                            </Card>
+                        ))}
+                    </div>
+                ) : (
+                    <Tables header="Karma" dataSource={karmaDataSource} columns={karmaColumnData} />
+                )}
             </div>
         </Layout>
     );

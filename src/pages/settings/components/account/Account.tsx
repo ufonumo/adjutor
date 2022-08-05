@@ -6,9 +6,12 @@ import styles from "./models/accout.module.scss";
 import uploadIcon from "../../../../assets/icons/settings/upload.svg";
 import { BsArrowRight } from "react-icons/bs";
 import Tables from "../../../../components/Table/tables";
-import { companyData } from "./models/companyData";
+import { companyColumnData, companyData, companyDataSource } from "./models/companyData";
+import useWindowSize from "../../../../hooks/useWindowSize";
 
 const Account = () => {
+    const { width } = useWindowSize();
+
     return (
         <div className={styles.container}>
             <Card variant="default">
@@ -71,7 +74,27 @@ const Account = () => {
             </div>
 
             <div className={styles.companyDetails}>
-                <Tables header="Company’s Details" dataSource={[]} columns={[]} />
+                {width < 768 ? (
+                    <div className={styles.mobile_card_container}>
+                        {companyDataSource.map((list, index) => (
+                            <Card variant="default" key={index}>
+                                <div className={styles.card_container_item} key={index}>
+                                    <h3>Document Type: </h3>
+                                    <span>{list.document}</span>
+                                    <h3>Type : </h3>
+                                    <span>{list.type}</span>
+                                    <p>Approved on: {list.approved}</p>
+                                </div>
+                            </Card>
+                        ))}
+                    </div>
+                ) : (
+                    <Tables
+                        header="Company’s Details"
+                        dataSource={companyDataSource}
+                        columns={companyColumnData}
+                    />
+                )}
             </div>
         </div>
     );

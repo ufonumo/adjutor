@@ -5,9 +5,12 @@ import Layout from "../../../components/Layout";
 import Tables from "../../../components/Table/tables";
 import Drawer from "./components/Drawer";
 import styles from "../models/all.module.scss";
+import { columns, dataSource } from "./components/models/data";
+import useWindowSize from "../../../hooks/useWindowSize";
 
 const Wallet = () => {
     const [visible, setVisible] = useState(false);
+    const { width } = useWindowSize();
 
     const showDrawer = () => {
         setVisible(true);
@@ -27,7 +30,7 @@ const Wallet = () => {
                     <Card variant="blue">
                         <div className={styles.wallet_blue_content}>
                             <h4>Current Balance for API Billing</h4>
-                            <h2>NGN 0</h2>
+                            <h2>NGN 20,000</h2>
                             <Button onClick={showDrawer} type="button" variant="light_blue">
                                 Fund wallet
                             </Button>
@@ -36,7 +39,7 @@ const Wallet = () => {
                     <Card variant="default">
                         <div className={styles.wallet_default_content}>
                             <h4>Low wallet Threshold</h4>
-                            <h2>NGN 0</h2>
+                            <h2>NGN 20,000</h2>
                             <p>Set Threshold</p>
                         </div>
                     </Card>
@@ -55,7 +58,26 @@ const Wallet = () => {
                     </Card>
                 </div>
 
-                <Tables header="Transaction History" dataSource={[]} columns={[]} />
+                {width < 768 ? (
+                    <div className={styles.mobile_card_container}>
+                        {dataSource.map((list, index) => (
+                            <Card variant="default" key={index}>
+                                <div className={styles.card_container_item} key={index}>
+                                    <h3>Type: {list.type}</h3>
+                                    <p>Transaction : {list.transaction}</p>
+                                    <p>Amount: {list.amount}</p>
+                                    <p>Date: {list.date}</p>
+                                </div>
+                            </Card>
+                        ))}
+                    </div>
+                ) : (
+                    <Tables
+                        header="Transaction History"
+                        dataSource={dataSource}
+                        columns={columns}
+                    />
+                )}
             </div>
 
             {visible && <Drawer visible={visible} onClose={onClose} title="Fund Wallet" />}

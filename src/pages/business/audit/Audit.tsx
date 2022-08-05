@@ -23,6 +23,7 @@ const Audit = () => {
                             <li
                                 onClick={() => handleActiveTab(index)}
                                 className={active === index ? styles.active : styles.links}
+                                key={index}
                             >
                                 {tab}
                             </li>

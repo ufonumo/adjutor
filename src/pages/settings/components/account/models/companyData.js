@@ -1,3 +1,5 @@
+import { AiOutlineMore } from "react-icons/ai";
+
 export const companyData = [
     {
         name: "Company Name",
@@ -30,5 +32,39 @@ export const companyData = [
     {
         name: "App url",
         value: "x3d4d4d7d.cloudfront.net",
+    },
+];
+
+export const companyColumnData = [
+    {
+        title: "Document Type",
+        dataIndex: "document",
+    },
+    {
+        title: "Type",
+        dataIndex: "type",
+    },
+    {
+        title: "Approved on",
+        dataIndex: "approved",
+    },
+    {
+        title: "",
+        dataIndex: "icon",
+    },
+];
+
+export const companyDataSource = [
+    {
+        document: "Certificate of Incorporation",
+        type: "-",
+        approved: "Apr 15, 2022, 05:47 am",
+        icon: <AiOutlineMore />,
+    },
+    {
+        document: "Certificate of Incorporation",
+        type: "-",
+        approved: "Apr 15, 2022, 05:47 am",
+        icon: <AiOutlineMore />,
     },
 ];

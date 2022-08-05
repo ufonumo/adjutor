@@ -8,12 +8,14 @@ import Button from "../../components/Button/button";
 import styles from "./signup.module.scss";
 
 const SignUpCreate = () => {
+    const navigate = useNavigate();
     return (
         <AuthLayout>
             <FormikStepper
                 initialValues={initialValues}
                 data-testid="enterprise-service"
                 onSubmit={(values) => {
+                    navigate("/signUp-account");
                     // handleSubmit(values);
                 }}
             >

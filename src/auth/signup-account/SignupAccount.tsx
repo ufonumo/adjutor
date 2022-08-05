@@ -8,13 +8,15 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/button";
 
 const SignUpAccount = () => {
+    const navigate = useNavigate();
+
     return (
         <AuthLayout>
             <FormikStepper
                 initialValues={AccountInitialValues}
                 data-testid="enterprise-service"
                 onSubmit={(values) => {
-                    // handleSubmit(values);
+                    navigate("/");
                 }}
             >
                 {FormFieldAccount.map(({ validationSchema, Component, name }) => (

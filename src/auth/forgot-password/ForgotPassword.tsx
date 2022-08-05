@@ -5,6 +5,7 @@ import AuthLayout from "../../components/AuthLayout/authLayout";
 import Button from "../../components/Button/button";
 import Input from "../../components/Input/input";
 import styles from "../login/login.module.scss";
+import { validateSchema } from "./utils/validate";
 
 const ForgotPassword = () => {
     return (
@@ -16,17 +17,7 @@ const ForgotPassword = () => {
 
             <Formik
                 initialValues={{ email: "", password: "" }}
-                validate={(values) => {
-                    const errors = {
-                        email: "",
-                    };
-                    if (!values.email) {
-                        errors.email = "Email is Required";
-                    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-                        errors.email = "Invalid email address";
-                    }
-                    return errors;
-                }}
+                validationSchema={validateSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
                         alert(JSON.stringify(values, null, 2));
@@ -50,9 +41,11 @@ const ForgotPassword = () => {
                         </ErrorMessage>
 
                         <div className={styles.buttonContainer}>
-                            <Button type="submit" variant="blue" disabled={!values.email}>
-                                Send Reset Link
-                            </Button>
+                            <Link to="/">
+                                <Button type="submit" variant="blue" disabled={!values.email}>
+                                    Send Reset Link
+                                </Button>
+                            </Link>
                         </div>
 
                         <p className={styles.signUp}>

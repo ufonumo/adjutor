@@ -74,6 +74,10 @@ h4 {
     background: #213f7d;
 }
 
+.mobile_card_container {
+    margin-bottom: 1rem;
+}
+
 @mixin needed {
     width: fit-content;
     color: var(--white);
