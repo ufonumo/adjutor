@@ -1,15 +1,12 @@
 import styles from "./models/passwordInput.module.scss";
 import { PasswordInputProps } from "./models/interface";
-import { BsEyeSlash } from "react-icons/bs";
+import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 const PasswordInput = ({
     label,
-    type,
     name,
-    placeholder,
     isShown,
     togglePasswordVisibility,
-    checked,
     labelStyle,
 }: PasswordInputProps) => {
     return (
@@ -26,9 +23,15 @@ const PasswordInput = ({
                     prefix="Show"
                     aria-label="password"
                 />
-                <span className={styles.showPassword} onClick={togglePasswordVisibility}>
-                    <BsEyeSlash size={20} color="#39cdcc" />
-                </span>
+                {isShown ? (
+                    <span className={styles.showPassword} onClick={togglePasswordVisibility}>
+                        <BsEye size={20} color="#213F7D" />
+                    </span>
+                ) : (
+                    <span className={styles.showPassword} onClick={togglePasswordVisibility}>
+                        <BsEyeSlash size={20} color="#213F7D" />
+                    </span>
+                )}
             </div>
         </div>
     );

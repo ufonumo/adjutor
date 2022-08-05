@@ -1,7 +1,8 @@
+import { Drawer } from "antd";
 import { useState } from "react";
 import styles from "./layout.module.scss";
-import Navbar from "./navbar/Navbar";
-import Sidebar from "./sidebar/Sidebar";
+import Navbar from "../navbar/Navbar";
+import Sidebar from "../sidebar/Sidebar";
 
 export interface LayoutProps {
     children: React.ReactNode;
@@ -18,7 +19,7 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
 
     return (
         <div className={styles.container}>
-            <Navbar inactive={inactive} />
+            <Navbar inactive={inactive} setOpenSidebar={setOpenSidebar} />
 
             <div className={inactive ? styles.container_sidebar_open : styles.container_sidebar}>
                 <div className={styles.sidebar_content}>
@@ -27,20 +28,25 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
                         onCollapse={onCollapse}
                         inactive={inactive}
                         setInactive={setInactive}
+                        setOpenSidebar={setOpenSidebar}
                     />
                 </div>
-                {/* 
+
                 <Drawer
-                    opened={openSidebar}
+                    visible={openSidebar}
                     onClose={() => setOpenSidebar(false)}
-                    withCloseButton={true}
-                    overlayColor="inherit"
-                    classNames={{
-                        closeButton: styles.closeButton,
-                    }}
+                    closable={false}
+                    width={320}
+                    bodyStyle={{ padding: "0px" }}
                 >
-                    <SideBar pageTitle={pageTitle} />
-                </Drawer> */}
+                    <Sidebar
+                        pageTitle={pageTitle}
+                        onCollapse={onCollapse}
+                        inactive={inactive}
+                        setInactive={setInactive}
+                        setOpenSidebar={setOpenSidebar}
+                    />
+                </Drawer>
 
                 <main className={styles.main}>
                     <div className={styles.main_container}>{children}</div>

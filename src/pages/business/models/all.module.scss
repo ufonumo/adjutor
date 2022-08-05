@@ -26,6 +26,11 @@
         gap: 1rem;
         color: var(--white);
         margin: 2rem 0;
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem 0;
+        }
         .wallet_blue_content,
         .wallet_default_content {
             cursor: pointer;
@@ -116,6 +121,9 @@
         bottom: 0;
         margin-bottom: 2rem;
         width: 90%;
+        @media screen and (max-width: 768px) {
+            margin-bottom: 1rem;
+        }
         .checkbox {
             margin: 1rem 0;
             display: flex;

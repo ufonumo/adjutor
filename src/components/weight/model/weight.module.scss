@@ -1,0 +1,42 @@
+.action__area {
+    display: flex;
+    align-items: center;
+}
+
+.add__btn,
+.subtract__btn,
+.action__area .subtract__btn:disabled {
+    border: none;
+    border: 0;
+    background-color: #bdbdbd;
+    color: #f5f5f5;
+    border-radius: 5px 0px 0px 5px;
+    padding: 1rem !important;
+    width: 18px !important;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    span {
+        font-size: 16px;
+    }
+    @media screen and (max-width: 526px) {
+        width: 12px;
+    }
+}
+
+.subtract__btn {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.item__quantity {
+    display: inline-block;
+    margin: 0 auto;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    background-color: #f5f5f5;
+    padding-top: 5px;
+    @media screen and (max-width: 526px) {
+        width: 40px;
+    }
+}

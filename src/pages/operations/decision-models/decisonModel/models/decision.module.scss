@@ -1,0 +1,264 @@
+.container {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 32px;
+            color: var(--primary);
+            margin: 0;
+
+            @media screen and (max-width: 768px) {
+                font-size: 24px;
+                line-height: 30px;
+            }
+        }
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #7a8cb1;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            @media screen and (max-width: 768px) {
+                font-size: 10px;
+            }
+        }
+    }
+    .card_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+        .card_content {
+            h3 {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 20px;
+                color: var(--primary);
+                padding: 0;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .card_header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+                .edit {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    margin: 0;
+                }
+            }
+            .card_modules {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                .card_module_content {
+                    h4 {
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 19px;
+                        color: var(--black);
+                    }
+                    p {
+                        margin-bottom: 0.5rem;
+                        font-weight: 500;
+                        .offer {
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 19px;
+                            color: var(--green);
+                        }
+                    }
+                }
+            }
+
+            // confirmation style
+            .card_configuration_header,
+            .card_scoring_header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                h4 {
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 19px;
+                    color: var(--primary);
+                }
+                p {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 19px;
+                    color: var(--dark-gray);
+                    text-transform: uppercase;
+                }
+            }
+            .version {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                color: var(--black);
+            }
+
+            // scoring style
+            .marginTop {
+                margin-top: 1rem;
+                .card_scoring_header {
+                    border-bottom: 1px solid #eeeeee;
+                    h4 {
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 19px;
+                        color: var(--black);
+                    }
+                    p {
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 19px;
+                        color: var(--black);
+                        text-transform: capitalize;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        cursor: pointer;
+                    }
+                }
+                .card_scoring {
+                    .scoring_header {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-top: 1rem;
+                        @media screen and (max-width: 768px) {
+                            gap: 0.5rem;
+                        }
+                        p {
+                            margin-bottom: 0;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .scoring_content {
+                        display: grid;
+                        grid-template-columns: 100px 70px 80px;
+                        align-items: center;
+                        margin-top: 2rem;
+                        @media screen and (max-width: 768px) {
+                            grid-template-columns: 1fr;
+                        }
+                        // gap: 1rem;
+                        .inputScore {
+                            display: flex;
+                            align-items: center;
+                            margin-top: -2rem;
+                            margin-left: 1rem;
+                            @media screen and (max-width: 768px) {
+                                margin-top: 1rem;
+                                margin-left: 0;
+                            }
+                            p {
+                                margin-top: 3rem;
+                                font-size: 10px;
+                                line-height: 14px;
+                                font-weight: 500;
+                                color: #bdbdbd;
+                            }
+                        }
+                    }
+
+                    .location_content {
+                        margin-top: 2rem;
+                        border-top: 1px solid #f5f5f5;
+
+                        .scoring_content {
+                            grid-template-columns: 1fr 1fr;
+                            @media screen and (max-width: 768px) {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                    }
+                    .scoring_bottom {
+                        border-top: 1px solid #f5f5f5;
+                        margin-top: 2rem;
+                        display: flex;
+                        justify-content: end;
+                        button {
+                            width: fit-content;
+                            margin-top: 1rem;
+                        }
+                    }
+                }
+            }
+
+            // workspace style
+            .card_sub {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                h3 {
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 16px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    color: #bdbdbd;
+                }
+                p {
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 19px;
+                    color: var(--black);
+                }
+            }
+
+            .card_workspace {
+                margin-top: 1rem;
+                .card_workspace_content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+                    p {
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: #e0e0e0;
+                    }
+                    .workspace_name {
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: var(--black);
+                    }
+                    .workspace_sub {
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 19px;
+                        color: var(--black);
+                        margin-bottom: 0.5rem;
+                        .offer {
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 19px;
+                            color: var(--green);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

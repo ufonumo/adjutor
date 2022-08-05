@@ -67,9 +67,11 @@ const Login = () => {
                             <p className={styles.forgotPassword}>Forgot Password ?</p>
                         </Link>
 
-                        <Button type="submit" variant="primary" disabled={isSubmitting}>
-                            Log In
-                        </Button>
+                        <Link to="/home">
+                            <Button type="submit" variant="primary" disabled={isSubmitting}>
+                                Log In
+                            </Button>
+                        </Link>
 
                         <p className={styles.signUp}>
                             <span>Don't have an account?</span>{" "}

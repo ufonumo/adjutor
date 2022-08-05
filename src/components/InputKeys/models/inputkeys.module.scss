@@ -1,0 +1,59 @@
+.content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .formGroup_password {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 6px 16px 16px;
+        height: 43px;
+        position: static;
+        width: 100%;
+        border: none;
+        background: var(--gray);
+        box-sizing: border-box;
+        border-radius: 4px;
+        &:focus-visible {
+            border: 1px solid var(--primary);
+            outline: 1px solid var(--primary);
+            background-color: var(--white);
+            border: none;
+        }
+        &::placeholder {
+            color: var(--light-gray);
+        }
+        input {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            width: 100%;
+        }
+
+        .showPassword {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            // color: #39cdcc;
+            position: relative;
+            cursor: pointer;
+            right: 20px;
+            @media screen and (max-width: 768px) {
+                right: 10px;
+            }
+        }
+    }
+}
+
+.label {
+    display: block;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--black);
+    margin: 8px 0px;
+    font-weight: 500;
+}

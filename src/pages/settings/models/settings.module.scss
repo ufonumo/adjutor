@@ -1,0 +1,40 @@
+.settings_container {
+    .header {
+        text-align: left;
+        h1 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 43px;
+            color: var(--primary);
+            margin: 0.3rem 0;
+            padding: 0;
+        }
+    }
+    .settings_content_tab {
+        .ul {
+            display: flex;
+            justify-content: space-between;
+            @media screen and (max-width: 768px) {
+                flex-wrap: wrap;
+                margin-bottom: 1rem;
+            }
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            .links,
+            .active {
+                list-style: none;
+                @media screen and (max-width: 768px) {
+                    margin-bottom: 1rem;
+                }
+            }
+            .active {
+                border-bottom: 3px solid var(--overlay-blue);
+                color: var(--primary);
+                font-weight: 500;
+            }
+        }
+    }
+}

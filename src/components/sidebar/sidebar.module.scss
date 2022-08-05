@@ -29,23 +29,38 @@
     width: 260px;
     height: 100%;
     box-sizing: border-box;
-    // padding: 30px 20px;
     transition: width 0.2s ease-in;
+    @media screen and (max-width: 768px) {
+        width: -webkit-fill-available;
+        height: 100%;
+        padding: 0;
+    }
     .top_section {
         margin: 30px 20px;
         position: relative;
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         .logo {
             span {
                 color: var(--white);
                 font-weight: 600;
                 font-size: 24px;
                 @media screen and (max-width: 768px) {
-                    display: none;
+                    // display: none;
                 }
             }
         }
+        .close {
+            display: none;
+            @media screen and (max-width: 768px) {
+                display: block;
+            }
+        }
         .menu_toggle {
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
             .menu_toggle_icon {
                 color: #a6b2cb;
                 z-index: 100;
@@ -55,7 +70,8 @@
                 transform: translateY(-50%);
                 cursor: pointer;
                 background-color: #0d1932;
-                padding: 0.1rem 0.3rem 0 0.3rem;
+                display: inline-flex;
+                padding: 0.4rem;
                 border-radius: 4px;
             }
         }
@@ -71,15 +87,18 @@
                 max-height: 250px;
                 overflow-y: scroll;
                 overflow-x: hidden;
-                .active {
-                    background: #333;
-                    border-radius: 5px;
-                    color: #fff;
+
+                .activeLink {
+                    background: #57d4d4;
+                    border-radius: 4px;
+                    padding: 5px 10px;
                 }
-                .links {
+                .links,
+                .activeLink {
                     display: flex;
                     align-items: center;
-
+                    color: var(--white);
+                    text-decoration: none;
                     .menu_icon {
                         display: inline-block;
                         margin-right: 10px;
@@ -88,41 +107,56 @@
                         line-height: 40px;
                         text-align: center;
                     }
-                    span {
+
+                    .flex {
+                        display: flex;
+                        align-items: center;
+                        .title {
+                            color: var(--white);
+                            margin-bottom: 0;
+                        }
+                        .dropdown {
+                            margin-left: 1rem;
+                        }
+                    }
+                }
+            }
+            .sub_menu {
+                margin-left: 20px;
+                border-left: 1px solid #666;
+                box-sizing: border-box;
+                padding-left: 30px;
+                list-style: none;
+                // max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-in;
+
+                .active_Link {
+                    background: #57d4d4;
+                    border-radius: 4px;
+                    padding: 5px 10px;
+                    color: var(--white);
+                    a {
+                        display: block;
+                        font-weight: 500;
+                        text-decoration: none;
+                        border-radius: 5px;
                         color: var(--white);
                     }
                 }
-                .sub_menu {
+                .sub_menu_item {
+                    display: block;
+                    margin: 5px 0;
+                    font-size: 15px;
+                    text-decoration: none;
                     color: #333;
-                    margin-left: 20px;
-                    border-left: 1px solid #666;
                     box-sizing: border-box;
-                    padding-left: 30px;
-                    list-style: none;
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: max-height 0.2s ease-in;
-                    .active {
-                        max-height: 200px;
-                    }
-                    .sub_menu_item {
+                    padding: 5px;
+                    a {
                         display: block;
-                        margin: 5px 0;
-                        font-size: 15px;
-                        font-weight: 600;
+                        font-weight: 500;
                         text-decoration: none;
-                        color: #333;
-                        box-sizing: border-box;
-                        padding: 5px;
-                        .active {
-                            background: #222;
-                            display: block;
-
-                            border-radius: 5px;
-                            color: #fff;
-                        }
-                        a {
-                        }
+                        color: var(--white);
                     }
                 }
             }
@@ -139,6 +173,9 @@
         background-color: var(--deep-blue);
         gap: 1rem;
         padding: 1rem;
+        @media screen and (max-width: 320px) {
+            left: 0;
+        }
         p {
             margin: 0;
         }
@@ -155,22 +192,26 @@
         }
         .menu_toggle {
             .menu_toggle_icon {
-                position: relative;
                 z-index: 100;
-                left: 1.7rem;
+                position: relative;
+                left: 1rem;
+                bottom: -1rem;
+                top: 0.8rem;
             }
         }
     }
     .main_menu {
         ul {
             .menu_item {
-                .links {
+                .links,
+                .activeLink {
                     .menu_icon {
                         // display: block;
                         width: 40px;
                         opacity: 1;
                     }
-                    span {
+
+                    .title {
                         opacity: 0;
                         width: 0;
                         height: 0;

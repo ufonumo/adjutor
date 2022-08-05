@@ -10,7 +10,10 @@ export interface CardProps {
         | string
         | "light_blue"
         | "light_yellow"
-        | "light_purple";
+        | "light_purple"
+        | "gray"
+        | "light_gray"
+        | "dark_gray";
     children: React.ReactNode;
     image?: string;
     subtitle?: string;

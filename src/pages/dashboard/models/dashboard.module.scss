@@ -42,6 +42,11 @@
                 line-height: 32px;
                 color: #bceeee;
             }
+            img {
+                @media screen and (max-width: 768px) {
+                    width: 80%;
+                }
+            }
         }
         .walletContainer {
             background: rgba(255, 255, 255, 0.1);

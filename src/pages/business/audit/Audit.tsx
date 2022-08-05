@@ -4,13 +4,14 @@ import ApiLog from "./components/ApiLog";
 import EventAudit from "./components/Event";
 import Webhooks from "./components/Webhooks";
 import styles from "./models/audit.module.scss";
+import { auditTabs } from "./models/auditData";
 const Audit = () => {
-    const [active, setActive] = useState(1);
+    const [active, setActive] = useState(0);
     const handleActiveTab = (index: number) => {
         setActive(index);
     };
     return (
-        <Layout pageTitle="Audit">
+        <Layout pageTitle="Audit trail">
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h1>Audits trail</h1>
@@ -18,30 +19,20 @@ const Audit = () => {
 
                 <div className={styles.audit_content_tab}>
                     <ul className={styles.ul}>
-                        <li
-                            onClick={() => handleActiveTab(1)}
-                            className={active === 1 ? styles.active : styles.links}
-                        >
-                            Events
-                        </li>
-                        <li
-                            onClick={() => handleActiveTab(2)}
-                            className={active === 2 ? styles.active : styles.links}
-                        >
-                            API Logs
-                        </li>
-                        <li
-                            onClick={() => handleActiveTab(3)}
-                            className={active === 3 ? styles.active : styles.links}
-                        >
-                            Webhooks Logs
-                        </li>
+                        {auditTabs.map((tab, index) => (
+                            <li
+                                onClick={() => handleActiveTab(index)}
+                                className={active === index ? styles.active : styles.links}
+                            >
+                                {tab}
+                            </li>
+                        ))}
                     </ul>
 
                     <div className={styles.audit_content}>
-                        {active === 1 && <EventAudit />}
-                        {active === 2 && <ApiLog />}
-                        {active === 3 && <Webhooks />}
+                        {active === 0 && <EventAudit />}
+                        {active === 1 && <ApiLog />}
+                        {active === 2 && <Webhooks />}
                     </div>
                 </div>
             </div>

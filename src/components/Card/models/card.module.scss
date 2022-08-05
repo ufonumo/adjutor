@@ -30,10 +30,31 @@
 }
 
 .--offer {
-    background-color: var(--overlay-blue);
+    background-color: var(--blue);
     padding: 20px;
     border-radius: 8px;
 }
+
+.--gray {
+    background: #f5f5f5;
+    border: 1px solid #616161;
+    border-radius: 8px;
+    padding: 20px;
+}
+.--light_gray {
+    background: rgba(255, 255, 255, 0.3);
+    border: 3px solid var(--white);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.--dark_gray {
+    background: #eeeeee;
+    border: 3px solid var(--white);
+    border-radius: 8px;
+    padding: 20px;
+}
+
 .imgContainer {
     display: flex;
     gap: 1rem;

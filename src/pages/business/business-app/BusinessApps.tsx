@@ -17,7 +17,7 @@ const BusinessApps = () => {
         setVisible(false);
     };
     return (
-        <Layout pageTitle="Business App">
+        <Layout pageTitle="Apps">
             <div className={styles.container}>
                 <div className={styles.header}>
                     <div className={styles.header_content}>

@@ -15,10 +15,12 @@
     --light-yellow: #ffeac2;
     --black: #141414;
     --deepGreen: #112a2a;
+    --blue: #3cb2ff;
     --light-blue: #2f59b2;
     --gray: #f5f5f5;
     --light-gray: #bdbdbd;
     --dark-gray: #757575;
+    --green: #18a957;
     --red: #df1642;
     --light-red: #fce8ec;
     --body-text-color: rgba(51, 51, 51, 1);
@@ -66,6 +68,10 @@ h4 {
 
 .ant-steps-item-icon .ant-steps-icon {
     display: none;
+}
+
+.ant-switch-checked.ant-switch {
+    background: #213f7d;
 }
 
 @mixin needed {

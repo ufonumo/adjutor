@@ -1,16 +1,20 @@
-import { AiOutlineSearch } from "react-icons/ai";
+import { Dispatch, SetStateAction } from "react";
+import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { BiNotification } from "react-icons/bi";
 import styles from "./navbar.module.scss";
 
 interface NavbarProps {
     inactive: boolean;
+    setOpenSidebar: Dispatch<SetStateAction<boolean>>;
 }
 
-const Navbar = ({ inactive }: NavbarProps) => {
+const Navbar = ({ inactive, setOpenSidebar }: NavbarProps) => {
     return (
-        <div className={inactive ? styles.navbar : styles.inactive}>
-            <div className={styles.flex}>
+        <div className={styles.container}>
+            <div className={inactive ? styles.navbar : styles.inactive}>
+                <div className={styles.toggleSidebar} onClick={() => setOpenSidebar(true)}>
+                    <AiOutlineMenu size={30} color="#213f7d" />
+                </div>
                 <div className={styles.navbar_searchbar}>
                     <div className={styles.search}>
                         <input
