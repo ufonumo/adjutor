@@ -37,7 +37,7 @@ const Dashboard = () => {
                             <img src={walletImg} alt="Wallet" />
                         </div>
                         <div className={styles.walletContainer}>
-                            <h3>$ 0.00</h3>
+                            <h3>$ 5,000</h3>
                             <div className={styles.subContainer} onClick={showDrawer}>
                                 <img src={addIcon} alt="Add" />
                                 <p>Fund wallet</p>
