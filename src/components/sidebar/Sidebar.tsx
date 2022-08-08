@@ -68,7 +68,9 @@ const Sidebar = ({ inactive, setInactive, setOpenSidebar }: SidebarProps) => {
                         </div>
                     </li>
 
-                    <ul className={openSubMenu ? styles.activeSubMenu : styles.sub_menu}>
+                    <ul
+                        className={openSubMenu && inactive ? styles.activeSubMenu : styles.sub_menu}
+                    >
                         {BusinessSubMenus?.map((sublist, index) => (
                             <NavLink
                                 to={sublist.path}
@@ -101,7 +103,11 @@ const Sidebar = ({ inactive, setInactive, setOpenSidebar }: SidebarProps) => {
                         </div>
                     </li>
 
-                    <ul className={operationSubMenu ? styles.activeSubMenu : styles.sub_menu}>
+                    <ul
+                        className={
+                            operationSubMenu && inactive ? styles.activeSubMenu : styles.sub_menu
+                        }
+                    >
                         {OperationsSubMenus?.map((sublist, index) => (
                             <NavLink
                                 to={sublist.path}
