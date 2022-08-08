@@ -203,9 +203,21 @@ h4 {
 
 .error {
     color: var(--red);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
-    margin-bottom: 2.5rem;
+    text-transform: capitalize;
+    // margin-bottom: 2.5rem;
+}
+
+.btn_flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+    button {
+        width: 100%;
+    }
 }
 
 .marginTop {

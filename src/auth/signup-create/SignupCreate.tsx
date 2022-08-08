@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import AuthLayout from "../../components/AuthLayout/authLayout";
 import FormField from "./utils/formfields";
 import { initialValues } from "./utils/initialvalues";
@@ -51,7 +51,6 @@ interface TWizardProps extends FormikConfig<FormikValues> {}
 export function FormikStepper({ children, ...props }: TWizardProps) {
     // @ts-ignore
     const childrenArray = React.Children.toArray(children) as React.ReactElement<FormikStepProps>[];
-    // const [error, setError] = useState("");
     const [step, setStep] = useState(0);
     const currentChild = childrenArray[step];
     const navigate = useNavigate();
@@ -60,9 +59,8 @@ export function FormikStepper({ children, ...props }: TWizardProps) {
         return step === childrenArray.length - 1;
     }
 
-    const handlePreviousStep = (event: PopStateEvent) => {
-        event.preventDefault();
-
+    const handlePreviousStep = (e: any) => {
+        e.preventDefault();
         if (!(step === 0)) {
             setStep(step - 1);
         } else {
@@ -70,9 +68,6 @@ export function FormikStepper({ children, ...props }: TWizardProps) {
         }
     };
 
-    useEffect(() => {
-        window.onpopstate = handlePreviousStep;
-    }, []);
     return (
         <div>
             <div className={styles.stepContainer}>
@@ -101,32 +96,21 @@ export function FormikStepper({ children, ...props }: TWizardProps) {
                 {({ isSubmitting }) => (
                     <Form>
                         {currentChild}
-
-                        <Button
-                            className="marginTop"
-                            variant="primary"
-                            type="submit"
-                            disabled={isSubmitting}
-                        >
-                            {step === 2 ? " Resend Link" : "Proceed"}
-                        </Button>
-
+                        <div className="btn_flex">
+                            <Button
+                                variant="border"
+                                type="button"
+                                onClick={(e) => handlePreviousStep(e)}
+                            >
+                                Back
+                            </Button>
+                            <Button variant="primary" type="submit" disabled={isSubmitting}>
+                                {step === 2 ? " Resend Link" : "Proceed"}
+                            </Button>
+                        </div>
                         <p className="signUp">
                             <span>Have an account?</span> <Link to="/">Sign In</Link>
                         </p>
-
-                        {/* {error && (
-                            <Alert
-                                color="red"
-                                onClose={() => setError("")}
-                                classNames={{
-                                    root: "bg-red-10 border-2 border-l-red-100",
-                                    message: "text-red-100",
-                                }}
-                            >
-                                {error || " Bummer! something went is wrong"}
-                            </Alert>
-                        )} */}
                     </Form>
                 )}
             </Formik>

@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./assets/stylesheets/base.scss";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import Login from "./auth/login/login";
 import ForgotPassword from "./auth/forgot-password/ForgotPassword";
 import SignUpCreate from "./auth/signup-create/SignupCreate";

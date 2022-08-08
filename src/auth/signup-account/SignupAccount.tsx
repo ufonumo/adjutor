@@ -1,5 +1,5 @@
 import { Form, Formik, FormikConfig, FormikValues } from "formik";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import AuthLayout from "../../components/AuthLayout/authLayout";
 import { AccountInitialValues } from "./utils/accountInitialValue";
 import FormFieldAccount from "./utils/formFieldAccout";
@@ -64,19 +64,13 @@ export function FormikStepper({ children, ...props }: TWizardProps) {
         return step === childrenArray.length - 1;
     }
 
-    const handlePreviousStep = (event: PopStateEvent) => {
-        event.preventDefault();
-
+    const handlePreviousStep = () => {
         if (!(step === 0)) {
             setStep(step - 1);
         } else {
             navigate("/signUp-create");
         }
     };
-
-    useEffect(() => {
-        window.onpopstate = handlePreviousStep;
-    }, []);
 
     return (
         <div>
@@ -109,14 +103,23 @@ export function FormikStepper({ children, ...props }: TWizardProps) {
                     <Form>
                         {currentChild}
 
-                        <Button
-                            className="marginTop"
-                            variant="primary"
-                            type="submit"
-                            disabled={isSubmitting}
-                        >
-                            {step === 4 ? "Let's go" : "Proceed"}
-                        </Button>
+                        <div className="flex">
+                            <Button
+                                variant="border"
+                                type="button"
+                                onClick={() => handlePreviousStep()}
+                            >
+                                Back
+                            </Button>{" "}
+                            <Button
+                                className="marginTop"
+                                variant="primary"
+                                type="submit"
+                                disabled={isSubmitting}
+                            >
+                                {step === 4 ? "Let's go" : "Proceed"}
+                            </Button>
+                        </div>
 
                         {step === 1 || step === 2 ? (
                             <p className={styles.skip} onClick={handleSkipButton}>
