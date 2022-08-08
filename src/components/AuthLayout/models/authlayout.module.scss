@@ -78,6 +78,9 @@
                 margin: 0;
                 width: 100%;
             }
+            @media screen and (max-width: 2560px) {
+                width: 60%;
+            }
             .mobileLogo {
                 display: none;
                 @media screen and (max-width: 768px) {
