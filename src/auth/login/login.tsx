@@ -15,62 +15,64 @@ const Login = () => {
     };
     return (
         <AuthLayout>
-            <div className="header">
-                <h1>Welcome Back!</h1>
-                <p>Empowering the smartest lenders.</p>
+            <div className={styles.container}>
+                <div className="header">
+                    <h1>Welcome Back!</h1>
+                    <p>Empowering the smartest lenders.</p>
+                </div>
+
+                <Formik
+                    initialValues={{ email: "", password: "" }}
+                    validationSchema={validateSchema}
+                    onSubmit={(values, { setSubmitting }) => {
+                        setTimeout(() => {
+                            alert(JSON.stringify(values, null, 2));
+                            setSubmitting(false);
+                        }, 400);
+                    }}
+                >
+                    {({ values, errors, touched, handleChange, handleSubmit, isSubmitting }) => (
+                        <form onSubmit={handleSubmit}>
+                            <Input
+                                type="email"
+                                name="email"
+                                onChange={handleChange}
+                                value={values.email}
+                                placeholder="Email"
+                                label="Email"
+                            />
+                            {errors.email && touched.email && errors.email}
+
+                            <PasswordInput
+                                type="password"
+                                name="password"
+                                value={values.password}
+                                placeholder="Password"
+                                label="Password"
+                                onChange={handleChange}
+                                togglePasswordVisibility={togglePassword}
+                                isShown={isShown}
+                            />
+                            {errors.password && touched.password && errors.password}
+
+                            <Link to="/forgot-password">
+                                <p className={styles.forgotPassword}>Forgot Password ?</p>
+                            </Link>
+
+                            <Link to="/home">
+                                <Button type="submit" variant="primary" disabled={isSubmitting}>
+                                    Log In
+                                </Button>
+                            </Link>
+
+                            <p className={styles.signUp}>
+                                <span>Don't have an account?</span>{" "}
+                                <Link to="/signUp-create">Sign Up</Link>
+                            </p>
+                        </form>
+                    )}
+                </Formik>
             </div>
-
-            <Formik
-                initialValues={{ email: "", password: "" }}
-                validationSchema={validateSchema}
-                onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                    }, 400);
-                }}
-            >
-                {({ values, errors, touched, handleChange, handleSubmit, isSubmitting }) => (
-                    <form onSubmit={handleSubmit}>
-                        <Input
-                            type="email"
-                            name="email"
-                            onChange={handleChange}
-                            value={values.email}
-                            placeholder="Email"
-                            label="Email"
-                        />
-                        {errors.email && touched.email && errors.email}
-
-                        <PasswordInput
-                            type="password"
-                            name="password"
-                            value={values.password}
-                            placeholder="Password"
-                            label="Password"
-                            onChange={handleChange}
-                            togglePasswordVisibility={togglePassword}
-                            isShown={isShown}
-                        />
-                        {errors.password && touched.password && errors.password}
-
-                        <Link to="/forgot-password">
-                            <p className={styles.forgotPassword}>Forgot Password ?</p>
-                        </Link>
-
-                        <Link to="/home">
-                            <Button type="submit" variant="primary" disabled={isSubmitting}>
-                                Log In
-                            </Button>
-                        </Link>
-
-                        <p className={styles.signUp}>
-                            <span>Don't have an account?</span>{" "}
-                            <Link to="/signUp-create">Sign Up</Link>
-                        </p>
-                    </form>
-                )}
-            </Formik>
         </AuthLayout>
     );
 };
