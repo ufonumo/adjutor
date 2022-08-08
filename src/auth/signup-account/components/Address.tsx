@@ -1,7 +1,8 @@
 import { useFormikContext } from "formik";
 import Input from "../../../components/Input/input";
 import Select from "../../../components/Select/select";
-import styles from "../signup.module.scss";
+import { accountSelectData, accountStateSelectData } from "../models/accountData";
+import styles from "../models/signup.module.scss";
 
 const Address = () => {
     const { setFieldValue } = useFormikContext();
@@ -36,14 +37,7 @@ const Address = () => {
                     name="city"
                     label="City*"
                     placeholder="Select"
-                    options={[
-                        {
-                            title: "Select City",
-                            value: "Select City",
-                        },
-                        { title: "Tomorrow", value: "future" },
-                        { title: "Yesterday", value: "past" },
-                    ]}
+                    options={accountSelectData}
                     onChange={(e) => {
                         setFieldValue("city", e.target.value);
                     }}
@@ -52,14 +46,7 @@ const Address = () => {
                     name="state"
                     label="State*"
                     placeholder="Select"
-                    options={[
-                        {
-                            title: "Select State",
-                            value: "Select State",
-                        },
-                        { title: "Tomorrow", value: "future" },
-                        { title: "Yesterday", value: "past" },
-                    ]}
+                    options={accountStateSelectData}
                     onChange={(e) => {
                         setFieldValue("state", e.target.value);
                     }}
@@ -69,14 +56,7 @@ const Address = () => {
                 name="country"
                 label="Country*"
                 placeholder="Select"
-                options={[
-                    {
-                        title: "State",
-                        value: "Select State",
-                    },
-                    { title: "Tomorrow", value: "future" },
-                    { title: "Yesterday", value: "past" },
-                ]}
+                options={accountStateSelectData}
                 onChange={(e) => {
                     setFieldValue("country", e.target.value);
                 }}

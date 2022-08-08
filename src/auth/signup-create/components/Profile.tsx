@@ -36,6 +36,7 @@ const Profile = () => {
                 placeholder="Email"
                 label="Mobile *"
             />
+
             <Input
                 type="email"
                 name="workEmail"

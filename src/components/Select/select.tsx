@@ -1,6 +1,7 @@
 import { BsChevronDown } from "react-icons/bs";
 import styles from "./models/select.module.scss";
 import { IOption, SelectProps } from "./models/interface";
+import { ErrorMessage } from "formik";
 
 const Select = ({
     className,
@@ -41,6 +42,14 @@ const Select = ({
                     <BsChevronDown color="#3CB2FF" />
                 </div>
             </div>
+
+            <ErrorMessage name={name}>
+                {(msg) => (
+                    <div className="error">
+                        {name} is {msg}
+                    </div>
+                )}
+            </ErrorMessage>
         </div>
     );
 };

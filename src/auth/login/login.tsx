@@ -6,6 +6,7 @@ import Button from "../../components/Button/button";
 import Input from "../../components/Input/input";
 import PasswordInput from "../../components/PasswordInput/PasswordInput";
 import styles from "./login.module.scss";
+import { validateSchema } from "./utils/validate";
 const Login = () => {
     const [isShown, setIsSHown] = useState(false);
 
@@ -21,17 +22,7 @@ const Login = () => {
 
             <Formik
                 initialValues={{ email: "", password: "" }}
-                validate={(values) => {
-                    const errors = {
-                        email: "",
-                    };
-                    if (!values.email) {
-                        errors.email = "Email is Required";
-                    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-                        errors.email = "Invalid email address";
-                    }
-                    return errors;
-                }}
+                validationSchema={validateSchema}
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
                         alert(JSON.stringify(values, null, 2));

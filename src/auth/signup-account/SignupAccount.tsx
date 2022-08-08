@@ -3,7 +3,7 @@ import React, { ReactNode, useEffect, useState } from "react";
 import AuthLayout from "../../components/AuthLayout/authLayout";
 import { AccountInitialValues } from "./utils/accountInitialValue";
 import FormFieldAccount from "./utils/formFieldAccout";
-import styles from "./signup.module.scss";
+import styles from "./models/signup.module.scss";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/button";
 

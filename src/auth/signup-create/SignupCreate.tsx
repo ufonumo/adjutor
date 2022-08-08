@@ -5,7 +5,7 @@ import { initialValues } from "./utils/initialvalues";
 import { Form, Formik, FormikConfig, FormikValues } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/button";
-import styles from "./signup.module.scss";
+import styles from "./models/signup.module.scss";
 
 const SignUpCreate = () => {
     const navigate = useNavigate();

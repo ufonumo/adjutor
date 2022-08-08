@@ -1,4 +1,4 @@
-import styles from "../signup.module.scss";
+import styles from "../models/signup.module.scss";
 export const successful = () => {
     return (
         <div className={styles.sucessContainer}>
