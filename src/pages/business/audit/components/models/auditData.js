@@ -12,6 +12,11 @@ export const eventColumnData = [
     {
         title: "Event",
         dataIndex: "event",
+        render: (text) => (
+            <>
+                <span>{text}</span> <span className="user">Kristin Williams Kristin</span>
+            </>
+        ),
     },
     {
         title: "",
@@ -21,7 +26,13 @@ export const eventColumnData = [
 
 export const eventDataSource = [
     {
-        when: "Feb 8th 2020, 9:26am",
+        when: "Feb 2th 2020, 9:26am",
+        member: "Kristin Williams Kristin",
+        event: "User Logged in",
+        icon: <AiOutlineMore />,
+    },
+    {
+        when: "Feb 6th 2020, 9:26am",
         member: "Kristin Williams Kristin",
         event: "User Logged in",
         icon: <AiOutlineMore />,
@@ -33,13 +44,7 @@ export const eventDataSource = [
         icon: <AiOutlineMore />,
     },
     {
-        when: "Feb 8th 2020, 9:26am",
-        member: "Kristin Williams Kristin",
-        event: "User Logged in",
-        icon: <AiOutlineMore />,
-    },
-    {
-        when: "Feb 8th 2020, 9:26am",
+        when: "Feb 7th 2020, 9:26am",
         member: "Kristin Williams Kristin",
         event: "User Logged in",
         icon: <AiOutlineMore />,

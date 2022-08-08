@@ -2,12 +2,17 @@ import { AiOutlineMore } from "react-icons/ai";
 
 export const columns = [
     {
-        title: "Apps",
+        title: "App name",
         dataIndex: "app",
     },
     {
         title: "Product",
         dataIndex: "product",
+        render: (text) => (
+            <>
+                <span className="connect">{text}</span>
+            </>
+        ),
     },
     {
         title: "Created",

@@ -1,4 +1,6 @@
-import { AiOutlineMore } from "react-icons/ai";
+import { AiOutlineInfoCircle, AiOutlineMore } from "react-icons/ai";
+import { MdContentCopy } from "react-icons/md";
+import ToolTips from "../../../components/ToolTip/toolTip";
 
 export const settingsTabs = [
     "Account Management",
@@ -12,6 +14,12 @@ export const teamColData = [
     {
         title: "Document Type",
         dataIndex: "document",
+        render: (text) => (
+            <div className="flex">
+                <p>{text}</p>{" "}
+                <ToolTips title={text} icon={<AiOutlineInfoCircle size={15} color="#3CB2FF" />} />{" "}
+            </div>
+        ),
     },
     {
         title: "Permission",
@@ -26,6 +34,7 @@ export const teamColData = [
 export const teamDataSource = [
     {
         document: "Customer Services",
+
         permission: "5",
         icon: <AiOutlineMore />,
     },
@@ -44,6 +53,14 @@ export const pricingColData = [
     {
         title: "URL",
         dataIndex: "url",
+        render: (text) => (
+            <div className="flex">
+                <p>{text}</p>{" "}
+                <div>
+                    <MdContentCopy size={20} color="#213F7D" />
+                </div>
+            </div>
+        ),
     },
     {
         title: "Price",

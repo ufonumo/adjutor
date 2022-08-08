@@ -1,4 +1,6 @@
 .drawer_content {
+    padding-bottom: 1rem;
+
     h4 {
         font-weight: 700;
         font-size: 16px;
@@ -17,9 +19,16 @@
             @media screen and (max-width: 320px) {
                 grid-template-columns: 1fr;
             }
+            .inputWidth {
+                width: 144px;
+                justify-self: self-end;
+                @media screen and (max-width: 320px) {
+                    width: 100%;
+                }
+            }
             p {
                 font-weight: 500;
-                font-size: 14px;
+                font-size: 16px;
                 line-height: 22px;
                 color: var(--black);
                 margin: 0;

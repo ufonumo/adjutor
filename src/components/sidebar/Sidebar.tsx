@@ -2,22 +2,20 @@ import { BusinessSubMenus, OperationsSubMenus, SidebarRoutes } from "../../route
 import { Dispatch, SetStateAction, useState } from "react";
 import styles from "./sidebar.module.scss";
 import { ReactComponent as MobileLogo } from "../../assets/images/login/lendsqr.svg";
-import { BiArrowBack } from "react-icons/bi";
-import { BsArrowRight, BsPeople } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AiOutlineClose, AiOutlineFile } from "react-icons/ai";
-import { FiChevronRight } from "react-icons/fi";
+import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import { TbActivityHeartbeat, TbSettings } from "react-icons/tb";
+import { BsPeople } from "react-icons/bs";
 
 interface SidebarProps {
-    pageTitle: string;
     onCollapse: (val: any) => void;
     inactive: boolean;
     setInactive: Dispatch<SetStateAction<boolean>>;
     setOpenSidebar: Dispatch<SetStateAction<boolean>>;
 }
 
-const Sidebar = ({ pageTitle, inactive, setInactive, setOpenSidebar }: SidebarProps) => {
+const Sidebar = ({ inactive, setInactive, setOpenSidebar }: SidebarProps) => {
     const [openSubMenu, setOpenSubMenu] = useState(false);
     const [operationSubMenu, setOperationSubMenu] = useState(false);
 
@@ -31,149 +29,111 @@ const Sidebar = ({ pageTitle, inactive, setInactive, setOpenSidebar }: SidebarPr
                     {" "}
                     <AiOutlineClose color="#fff" size={30} />
                 </div>
-
-                <div className={styles.menu_toggle} onClick={() => setInactive(!inactive)}>
-                    {inactive ? (
-                        <div className={styles.menu_toggle_icon}>
-                            <BiArrowBack />
-                        </div>
-                    ) : (
-                        <div className={styles.menu_toggle_icon}>
-                            {" "}
-                            <BsArrowRight />
-                        </div>
-                    )}
-                </div>
             </div>
 
             <div className={styles.main_menu}>
                 <ul>
                     {SidebarRoutes.map((list, index) => (
-                        <li key={index} className={styles.menu_item}>
-                            <Link
-                                to={list?.path}
-                                className={
-                                    pageTitle === list.title ? styles.activeLink : styles.links
-                                }
-                            >
-                                <span className={styles.menu_icon}>{list?.icon}</span>
+                        <NavLink
+                            to={list.path}
+                            key={index}
+                            className={({ isActive }) =>
+                                isActive ? styles.activeLink : styles.menu_item
+                            }
+                        >
+                            <div className={styles.menu_icon}>{list?.icon}</div>
 
-                                <div className={styles.flex}>
-                                    <p className={styles.title}>{list.title}</p>
-                                </div>
-                            </Link>
-                        </li>
+                            <div className={styles.flex}>
+                                <p className={styles.title}>{list.title}</p>
+                            </div>
+                        </NavLink>
                     ))}
 
+                    {/* Business with submenu */}
                     <li
                         className={styles.menu_item}
                         onClick={() => {
-                            if (inactive) {
-                                setOpenSubMenu(!openSubMenu);
-                            }
+                            setOpenSubMenu(!openSubMenu);
                         }}
                     >
-                        <Link
-                            to=""
-                            className={pageTitle === "Business" ? styles.activeLink : styles.links}
-                        >
-                            <span className={styles.menu_icon}>
-                                <BsPeople />
-                            </span>
+                        <span className={styles.menu_icon}>
+                            <BsPeople />
+                        </span>
 
-                            <div className={styles.flex}>
-                                <p className={styles.title}>Business</p>
-                                <span className={styles.dropdown}>
-                                    <FiChevronRight />
-                                </span>
-                            </div>
-                        </Link>
+                        <div className={styles.flex}>
+                            <p className={styles.title}>Business</p>
+                            <span className={styles.dropdown}>
+                                {!openSubMenu ? <FiChevronRight /> : <FiChevronDown />}
+                            </span>
+                        </div>
                     </li>
 
-                    {openSubMenu && (
-                        <ul className={styles.sub_menu}>
-                            {BusinessSubMenus?.map((sublist, index) => (
-                                <li
-                                    key={index}
-                                    className={
-                                        pageTitle === sublist.name
-                                            ? styles.active_Link
-                                            : styles.sub_menu_item
-                                    }
-                                >
-                                    <Link to={sublist?.path}>
-                                        <span>{sublist?.name}</span>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
+                    <ul className={openSubMenu ? styles.activeSubMenu : styles.sub_menu}>
+                        {BusinessSubMenus?.map((sublist, index) => (
+                            <NavLink
+                                to={sublist.path}
+                                key={index}
+                                className={({ isActive }) =>
+                                    isActive ? styles.activeLink : styles.sub_menu_item
+                                }
+                            >
+                                <span>{sublist?.name}</span>
+                            </NavLink>
+                        ))}
+                    </ul>
 
+                    {/* operations with submenu */}
                     <li
                         className={styles.menu_item}
                         onClick={() => {
-                            if (inactive) {
-                                setOperationSubMenu(!operationSubMenu);
-                            }
+                            setOperationSubMenu(!operationSubMenu);
                         }}
                     >
-                        <Link
-                            to=""
-                            className={
-                                pageTitle === "Operations" ? styles.activeLink : styles.links
-                            }
-                        >
-                            <span className={styles.menu_icon}>
-                                <TbActivityHeartbeat />
-                            </span>
+                        <span className={styles.menu_icon}>
+                            <TbActivityHeartbeat />
+                        </span>
 
-                            <div className={styles.flex}>
-                                <p className={styles.title}>Operations</p>
-                                <span className={styles.dropdown}>
-                                    <FiChevronRight />
-                                </span>
-                            </div>
-                        </Link>
+                        <div className={styles.flex}>
+                            <p className={styles.title}>Operations</p>
+                            <span className={styles.dropdown}>
+                                {!operationSubMenu ? <FiChevronRight /> : <FiChevronDown />}
+                            </span>
+                        </div>
                     </li>
 
-                    {operationSubMenu && (
-                        <ul className={styles.sub_menu}>
-                            {OperationsSubMenus?.map((sublist, index) => (
-                                <li
-                                    key={index}
-                                    className={
-                                        pageTitle === sublist.name
-                                            ? styles.active_Link
-                                            : styles.sub_menu_item
-                                    }
-                                >
-                                    <Link to={sublist?.path}>
-                                        <span>{sublist?.name}</span>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
+                    <ul className={operationSubMenu ? styles.activeSubMenu : styles.sub_menu}>
+                        {OperationsSubMenus?.map((sublist, index) => (
+                            <NavLink
+                                to={sublist.path}
+                                key={index}
+                                className={({ isActive }) =>
+                                    isActive ? styles.activeLink : styles.sub_menu_item
+                                }
+                            >
+                                <span>{sublist?.name}</span>
+                            </NavLink>
+                        ))}
+                    </ul>
 
-                    <li className={styles.menu_item}>
-                        <Link
-                            to="/settings"
-                            className={pageTitle === "Settings" ? styles.activeLink : styles.links}
-                        >
-                            <span className={styles.menu_icon}>
-                                <TbSettings />
-                            </span>
+                    <NavLink
+                        to="/settings"
+                        className={({ isActive }) =>
+                            isActive ? styles.activeLink : styles.menu_item
+                        }
+                    >
+                        <span className={styles.menu_icon}>
+                            <TbSettings />
+                        </span>
 
-                            <div className={styles.flex}>
-                                <p className={styles.title}>Settings</p>
-                            </div>
-                        </Link>
-                    </li>
+                        <div className={styles.flex}>
+                            <p className={styles.title}>Settings</p>
+                        </div>
+                    </NavLink>
                 </ul>
             </div>
 
             <div className={styles.bottom}>
-                <AiOutlineFile size={20} />
+                <AiOutlineFile size={16} />
                 <p>API Documentation</p>
             </div>
         </div>

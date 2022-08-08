@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import styles from "./navbar.module.scss";
+import downArrow from "../../assets/icons/down-arrow.svg";
 
 interface NavbarProps {
     inactive: boolean;
@@ -31,14 +32,14 @@ const Navbar = ({ inactive, setOpenSidebar }: NavbarProps) => {
                 </div>
                 <div className={styles.options}>
                     <div className={styles.notificationIcon}>
-                        <IoMdNotificationsOutline color="#fff" size={25} />
+                        <IoMdNotificationsOutline color="#213f7d" size={30} />
                     </div>
 
                     <div className={styles.profile}>
                         <span className={styles.profile_dets}>D</span>
-                        <select name="profile" id="">
-                            <option value="Adedeji">Adedeji</option>
-                        </select>
+                        <p className={styles.name}>
+                            Adedeji <img src={downArrow} alt="down arrow" />
+                        </p>
                     </div>
                 </div>
             </div>

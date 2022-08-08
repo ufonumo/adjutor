@@ -15,7 +15,7 @@ const Login = () => {
     return (
         <AuthLayout>
             <div className="header">
-                <h1>Welcome Back !</h1>
+                <h1>Welcome Back!</h1>
                 <p>Empowering the smartest lenders.</p>
             </div>
 

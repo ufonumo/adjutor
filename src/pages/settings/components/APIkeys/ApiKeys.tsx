@@ -1,10 +1,10 @@
 import Button from "../../../../components/Button/button";
 import Card from "../../../../components/Card/card";
 import styles from "./models/api.module.scss";
-import { GrPowerCycle } from "react-icons/gr";
 import InputKeys from "../../../../components/InputKeys/InputKeys";
 import { useState } from "react";
 import { IoIosWarning } from "react-icons/io";
+import RotateIcon from "../../../../assets/icons/rotate.svg";
 
 const ApiKeys = () => {
     const [isShown, setIsSHown] = useState(true);
@@ -26,8 +26,8 @@ const ApiKeys = () => {
                 <div className={styles.api_live_keys}>
                     <div className={styles.api_live_keys_header}>
                         <h4>Live Keys</h4>
-                        <Button variant="border" type="button">
-                            <GrPowerCycle color="#213F7D" /> Generate new keys
+                        <Button variant="border" type="button" className={styles.api_button}>
+                            <img src={RotateIcon} alt="Generate" /> Generate new keys
                         </Button>
                     </div>
 
@@ -53,8 +53,8 @@ const ApiKeys = () => {
                 <div className={styles.api_live_keys}>
                     <div className={styles.api_live_keys_header}>
                         <h4>Test Keys</h4>
-                        <Button variant="border" type="button">
-                            <GrPowerCycle color="#213F7D" /> Generate new keys
+                        <Button variant="border" type="button" className={styles.api_button}>
+                            <img src={RotateIcon} alt="Generate" /> Generate new keys
                         </Button>
                     </div>
 

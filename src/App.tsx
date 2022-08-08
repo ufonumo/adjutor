@@ -15,6 +15,7 @@ import Karma from "./pages/operations/karma/Karma";
 import Operations from "./pages/operations/Operations";
 import OfferSetting from "./pages/operations/decision-models/offerSetting/OfferSetting";
 import DecisionModel from "./pages/operations/decision-models/decisonModel/DecisionModel";
+import Container from "./Container";
 
 function App() {
     return (
@@ -25,17 +26,18 @@ function App() {
                 <Route path="/signUp-create" element={<SignUpCreate />} />
                 <Route path="/signUp-account" element={<SignUpAccount />} />
 
-                <Route path="/home" element={<Home />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/wallet" element={<Wallet />} />
-                <Route path="/business-app" element={<BusinessApps />} />
-                <Route path="/audit" element={<Audit />} />
-                <Route path="/settings" element={<Settings />} />
-                <Route path="/karma" element={<Karma />} />
-                {/* <Route path="/operations" element={<Operations />} /> */}
-                <Route path="/offer-setting" element={<OfferSetting />} />
-                <Route path="/decision-model" element={<Operations />} />
-                <Route path="/decision-sub" element={<DecisionModel />} />
+                <Route path="/" element={<Container />}>
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/wallet" element={<Wallet />} />
+                    <Route path="/business-app" element={<BusinessApps />} />
+                    <Route path="/audit" element={<Audit />} />
+                    <Route path="/settings" element={<Settings />} />
+                    <Route path="/karma" element={<Karma />} />
+                    <Route path="/offer-setting" element={<OfferSetting />} />
+                    <Route path="/decision-model" element={<Operations />} />
+                    <Route path="/decision-sub" element={<DecisionModel />} />
+                </Route>
             </Routes>
         </div>
     );

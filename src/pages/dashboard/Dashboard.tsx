@@ -1,5 +1,4 @@
 import Card from "../../components/Card/card";
-import Layout from "../../components/Layout";
 import styles from "./models/dashboard.module.scss";
 import walletImg from "../../assets/icons/dashboard/wallet.svg";
 import addIcon from "../../assets/icons/dashboard/add.svg";
@@ -24,7 +23,7 @@ const Dashboard = () => {
         setVisible(false);
     };
     return (
-        <Layout pageTitle="Dashboard">
+        <>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h1>Dashboard</h1>
@@ -37,7 +36,7 @@ const Dashboard = () => {
                             <img src={walletImg} alt="Wallet" />
                         </div>
                         <div className={styles.walletContainer}>
-                            <h3>$ 5,000</h3>
+                            <h3>₦ 5,000</h3>
                             <div className={styles.subContainer} onClick={showDrawer}>
                                 <img src={addIcon} alt="Add" />
                                 <p>Fund wallet</p>
@@ -71,6 +70,8 @@ const Dashboard = () => {
 
                 {width < 768 ? (
                     <div className={styles.mobile_card_container}>
+                        <h3 className="heading3">Recent API Calls</h3>
+
                         {tableData.map((list, index) => (
                             <Card variant="default" key={index}>
                                 <div className={styles.card_container_item} key={index}>
@@ -87,7 +88,7 @@ const Dashboard = () => {
             </div>
 
             {visible && <Drawer visible={visible} onClose={onClose} title="Fund Wallet" />}
-        </Layout>
+        </>
     );
 };
 

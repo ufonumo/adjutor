@@ -25,7 +25,9 @@ const ScoreDrawer = ({ visible, onClose, title }: DrawerInterface) => {
                                 <p>
                                     <AiOutlinePlusCircle size={15} color="#3CB2FF" /> {data}
                                 </p>
-                                <Input type="text" placeholder="00" name="amount" />
+                                <div className={styles.inputWidth}>
+                                    <Input type="text" placeholder="00" name="amount" />
+                                </div>
                             </div>
                         ))}
                     </div>

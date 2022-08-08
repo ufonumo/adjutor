@@ -1,5 +1,4 @@
 import Card from "../../components/Card/card";
-import Layout from "../../components/Layout";
 import styles from "./models/operation.module.scss";
 
 import { Link } from "react-router-dom";
@@ -7,7 +6,7 @@ import { operationCard } from "./models/operationData";
 
 const Operations = () => {
     return (
-        <Layout pageTitle="Decision Models">
+        <>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h1>Create Your Lending Models</h1>
@@ -30,7 +29,7 @@ const Operations = () => {
                     ))}
                 </div>
             </div>
-        </Layout>
+        </>
     );
 };
 

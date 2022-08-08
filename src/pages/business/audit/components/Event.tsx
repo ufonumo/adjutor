@@ -10,9 +10,11 @@ const EventAudit = () => {
         <div>
             {width < 768 ? (
                 <div className="mobile_card_container">
+                    <h3 className="heading3">Events</h3>
+
                     {eventDataSource.map((list, index) => (
                         <Card variant="default" key={index}>
-                            <div key={index}>
+                            <div>
                                 <h3>When: {list.when}</h3>
                                 <p>Member : {list.member}</p>
                                 <p>Event: {list.event}</p>

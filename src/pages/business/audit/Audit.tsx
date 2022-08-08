@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Layout from "../../../components/Layout";
 import ApiLog from "./components/ApiLog";
 import EventAudit from "./components/Event";
 import Webhooks from "./components/Webhooks";
@@ -11,7 +10,7 @@ const Audit = () => {
         setActive(index);
     };
     return (
-        <Layout pageTitle="Audit trail">
+        <>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h1>Audits trail</h1>
@@ -37,7 +36,7 @@ const Audit = () => {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </>
     );
 };
 

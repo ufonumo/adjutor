@@ -1,4 +1,5 @@
 import { AiOutlineMore } from "react-icons/ai";
+import dotIcon from "../../../../../assets/icons/dashboard/dot.svg";
 
 export const companyData = [
     {
@@ -39,6 +40,12 @@ export const companyColumnData = [
     {
         title: "Document Type",
         dataIndex: "document",
+        render: (text) => (
+            <>
+                <img src={dotIcon} alt="dot" className="mr-1" />
+                <span>{text}</span>
+            </>
+        ),
     },
     {
         title: "Type",

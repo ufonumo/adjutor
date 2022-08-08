@@ -3,11 +3,15 @@ import styles from "./models/slider.module.scss";
 import { SliderInterface } from "./models/sliderInterface";
 import backIcon from "../../assets/icons/back.svg";
 import { useEffect, useState } from "react";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const Slider = ({ onClose, title, visible, children }: SliderInterface) => {
-    const [width, setWidth] = useState("");
+    const [drawerWidth, setDrawerWidth] = useState("");
+
+    const { width } = useWindowSize();
+
     useEffect(() => {
-        window.screen.width === 320 ? setWidth("320px") : setWidth("375px");
+        width < 768 ? setDrawerWidth("320px") : setDrawerWidth("640px");
     }, [width, visible]);
 
     return (
@@ -16,13 +20,18 @@ const Slider = ({ onClose, title, visible, children }: SliderInterface) => {
                 placement="right"
                 onClose={onClose}
                 visible={visible}
-                width={width}
+                width={drawerWidth}
+                headerStyle={{
+                    border: "none",
+                }}
                 closable={false}
+                title={
+                    <div className={styles.header}>
+                        <img onClick={onClose} src={backIcon} alt="back" />
+                        <h1>{title}</h1>
+                    </div>
+                }
             >
-                <div className={styles.header}>
-                    <img onClick={onClose} src={backIcon} alt="back" />
-                    <h1>{title}</h1>
-                </div>
                 <div className={styles.slider_content}>{children}</div>
             </Drawer>
         </div>

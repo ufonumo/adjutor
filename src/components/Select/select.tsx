@@ -14,7 +14,7 @@ const Select = ({
     ...rest
 }: SelectProps) => {
     return (
-        <div className={styles["select-container"]} style={style} data-testid="select-container">
+        <div className={styles.select_container} style={style} data-testid="select-container">
             <label style={labelStyle} className={styles["label"]} htmlFor={`${name}`}>
                 {label}
             </label>

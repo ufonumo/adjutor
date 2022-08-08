@@ -2,6 +2,7 @@ import totalIcon from "../../../../assets/icons/karma/total.svg";
 import activeIcon from "../../../../assets/icons/karma/active.svg";
 import pendingIcon from "../../../../assets/icons/karma/pending.svg";
 import { AiOutlineMore } from "react-icons/ai";
+import dotIcon from "../../../../assets/icons/dashboard/dot.svg";
 
 export const karmaData = [
     {
@@ -34,6 +35,12 @@ export const karmaColumnData = [
     {
         title: "Reporting Entity",
         dataIndex: "report",
+        render: (text) => (
+            <>
+                <img src={dotIcon} alt="dot" className="mr-1" />
+                <span>{text}</span>
+            </>
+        ),
     },
     {
         title: "Type",

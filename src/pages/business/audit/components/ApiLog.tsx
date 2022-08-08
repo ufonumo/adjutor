@@ -10,6 +10,8 @@ const ApiLog = () => {
         <div>
             {width < 768 ? (
                 <div>
+                    <h3 className="heading3">API Logs</h3>
+
                     {tableData.map((list, index) => (
                         <Card variant="default" key={index}>
                             <div key={index}>

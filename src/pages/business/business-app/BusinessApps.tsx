@@ -2,7 +2,6 @@ import { useState } from "react";
 import { BiPlus } from "react-icons/bi";
 import Button from "../../../components/Button/button";
 import Card from "../../../components/Card/card";
-import Layout from "../../../components/Layout";
 import Tables from "../../../components/Table/tables";
 import useWindowSize from "../../../hooks/useWindowSize";
 import AppDrawer from "./components/AppDrawer";
@@ -21,7 +20,7 @@ const BusinessApps = () => {
         setVisible(false);
     };
     return (
-        <Layout pageTitle="Apps">
+        <>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <div className={styles.header_content}>
@@ -40,6 +39,8 @@ const BusinessApps = () => {
 
                 {width < 768 ? (
                     <div className={styles.mobile_card_container}>
+                        <h3 className="heading3">Apps</h3>
+
                         {dataSource.map((list, index) => (
                             <Card variant="default" key={index}>
                                 <div className={styles.card_container_item} key={index}>
@@ -56,7 +57,7 @@ const BusinessApps = () => {
             </div>
 
             {visible && <AppDrawer title="Create app" visible={visible} onClose={onClose} />}
-        </Layout>
+        </>
     );
 };
 

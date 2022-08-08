@@ -1,7 +1,6 @@
 import { FiChevronsRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Card from "../../../../components/Card/card";
-import Layout from "../../../../components/Layout";
 import styles from "./model/offer.module.scss";
 import swapIcon from "../../../../assets/images/operation/swap.svg";
 import Select from "../../../../components/Select/select";
@@ -22,7 +21,7 @@ const OfferSetting = () => {
     };
 
     return (
-        <Layout pageTitle="Offer setting">
+        <>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h1>Offer settings</h1>
@@ -46,6 +45,7 @@ const OfferSetting = () => {
                                     name="Previous Loans"
                                     onChange={() => {}}
                                     options={selectData}
+                                    className={styles.select}
                                 />
 
                                 <p className={styles.difference}>IS</p>
@@ -92,7 +92,7 @@ const OfferSetting = () => {
                     </Card>
                 </div>
             </div>
-        </Layout>
+        </>
     );
 };
 

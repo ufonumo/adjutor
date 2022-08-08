@@ -10,6 +10,8 @@ const Pricing = () => {
         <div>
             {width < 768 ? (
                 <div>
+                    <h3 className="heading3">Endpoint URL Pricing</h3>
+
                     {pricingDataSource.map((list, index) => (
                         <Card variant="default" key={index}>
                             <div key={index}>

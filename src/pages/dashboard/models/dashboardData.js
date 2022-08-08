@@ -1,5 +1,7 @@
 import { AiOutlineMore } from "react-icons/ai";
 import graphIcon from "../../../assets/icons/dashboard/graph.svg";
+import dotIcon from "../../../assets/icons/dashboard/dot.svg";
+
 export const dashboardData = [
     {
         title: "Total API calls",
@@ -31,6 +33,12 @@ export const columns = [
     {
         title: "Status Code",
         dataIndex: "status",
+        render: (text) => (
+            <>
+                <img src={dotIcon} alt="dot" className="mr-1" />
+                <span>{text}</span>
+            </>
+        ),
     },
     {
         title: "Request ID",
@@ -56,7 +64,7 @@ export const columns = [
 
 export const tableData = [
     {
-        status: "404",
+        status: "202",
         requestID: "b7206c32-b945-44d2-9b36-c945868",
         method: "GET",
         url: "https://www.google.com/",

@@ -1,12 +1,11 @@
 import Card from "../../components/Card/card";
-import Layout from "../../components/Layout";
 import styles from "./models/home.module.scss";
 
 import { homeData } from "./models/data";
 
 const Home = () => {
     return (
-        <Layout pageTitle="Home">
+        <>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h1>Hello Daniel,</h1>
@@ -37,7 +36,7 @@ const Home = () => {
                     ))}
                 </div>
             </div>
-        </Layout>
+        </>
     );
 };
 

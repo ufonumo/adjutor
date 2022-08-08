@@ -4,7 +4,6 @@ import { FiChevronsRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Card from "../../../../components/Card/card";
 import ToolTips from "../../../../components/ToolTip/toolTip";
-import Layout from "../../../../components/Layout";
 import Scoring from "./components/scoring/Scoring";
 import styles from "./models/decision.module.scss";
 import { ModuleData, workspaceData } from "./models/decisionData";
@@ -14,7 +13,7 @@ const DecisionModel = () => {
     const [showScoring, setShowScoring] = useState(false);
 
     return (
-        <Layout pageTitle="Decision Models">
+        <>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h1>Decision Models</h1>
@@ -127,7 +126,7 @@ const DecisionModel = () => {
                     </Card>
                 </div>
             </div>
-        </Layout>
+        </>
     );
 };
 

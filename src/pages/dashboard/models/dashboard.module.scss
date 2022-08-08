@@ -43,6 +43,7 @@
                 color: #bceeee;
             }
             img {
+                width: 70%;
                 @media screen and (max-width: 768px) {
                     width: 80%;
                 }
@@ -64,6 +65,7 @@
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
+                padding-bottom: 0.5rem;
                 p {
                     margin: 0;
                     font-weight: 300;
@@ -73,7 +75,7 @@
         .dashboard_content_list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            column-gap: 1rem;
             cursor: pointer;
 
             @media screen and (max-width: 768px) {

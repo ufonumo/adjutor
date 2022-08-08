@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Button from "../../../components/Button/button";
 import Card from "../../../components/Card/card";
-import Layout from "../../../components/Layout";
 import Tables from "../../../components/Table/tables";
 import Drawer from "./components/Drawer";
 import styles from "../models/all.module.scss";
@@ -20,7 +19,7 @@ const Wallet = () => {
         setVisible(false);
     };
     return (
-        <Layout pageTitle="Wallet">
+        <>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h1>Your wallet & Payment account</h1>
@@ -60,10 +59,12 @@ const Wallet = () => {
 
                 {width < 768 ? (
                     <div className={styles.mobile_card_container}>
+                        <h3 className="heading3">Transaction History</h3>
+
                         {dataSource.map((list, index) => (
                             <Card variant="default" key={index}>
                                 <div className={styles.card_container_item} key={index}>
-                                    <h3>Type: {list.type}</h3>
+                                    <p>Type: {list.type}</p>
                                     <p>Transaction : {list.transaction}</p>
                                     <p>Amount: {list.amount}</p>
                                     <p>Date: {list.date}</p>
@@ -81,7 +82,7 @@ const Wallet = () => {
             </div>
 
             {visible && <Drawer visible={visible} onClose={onClose} title="Fund Wallet" />}
-        </Layout>
+        </>
     );
 };
 

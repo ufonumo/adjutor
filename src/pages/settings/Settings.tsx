@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Layout from "../../components/Layout";
 import Account from "./components/account/Account";
 import ApiKeys from "./components/APIkeys/ApiKeys";
 import Notification from "./components/notification/Notification";
@@ -15,7 +14,7 @@ const Settings = () => {
     };
 
     return (
-        <Layout pageTitle="Settings">
+        <>
             <div className={styles.settings_container}>
                 <div className={styles.header}>
                     <h1>Settings</h1>
@@ -40,7 +39,7 @@ const Settings = () => {
                     {active === 4 && <Notification />}
                 </div>
             </div>
-        </Layout>
+        </>
     );
 };
 

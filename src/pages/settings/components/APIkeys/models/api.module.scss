@@ -10,6 +10,7 @@
         padding: 0;
     }
 }
+
 .api_keys_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -22,6 +23,9 @@
         background-color: #fafafa;
         border-radius: 10px;
         padding: 20px;
+        @media screen and (max-width: 768px) {
+            padding: 0;
+        }
         .api_live_keys_header {
             display: flex;
             justify-content: space-between;
@@ -36,6 +40,14 @@
                 padding: 0;
                 @media screen and (max-width: 768px) {
                     font-size: 14px;
+                }
+            }
+            .api_button {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                @media screen and (max-width: 768px) {
+                    gap: 0.2rem;
                 }
             }
         }

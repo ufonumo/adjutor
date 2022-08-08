@@ -1,5 +1,4 @@
 import Card from "../../../components/Card/card";
-import Layout from "../../../components/Layout";
 import styles from "./models/karma.module.scss";
 
 import { BsArrowUpCircle } from "react-icons/bs";
@@ -11,7 +10,7 @@ const Karma = () => {
     const { width } = useWindowSize();
 
     return (
-        <Layout pageTitle="Karma">
+        <>
             <div className={styles.container}>
                 <div className={styles.header}>
                     {" "}
@@ -34,6 +33,8 @@ const Karma = () => {
 
                 {width < 768 ? (
                     <div className={styles.mobile_card_container}>
+                        <h3 className="heading3">Karma</h3>
+
                         {karmaDataSource.map((list, index) => (
                             <Card variant="default" key={index}>
                                 <div className={styles.card_container_item} key={index}>
@@ -49,7 +50,7 @@ const Karma = () => {
                     <Tables header="Karma" dataSource={karmaDataSource} columns={karmaColumnData} />
                 )}
             </div>
-        </Layout>
+        </>
     );
 };
 

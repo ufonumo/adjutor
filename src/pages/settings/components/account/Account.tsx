@@ -76,6 +76,8 @@ const Account = () => {
             <div className={styles.companyDetails}>
                 {width < 768 ? (
                     <div className={styles.mobile_card_container}>
+                        <h3 className="heading3">Company's Details</h3>
+
                         {companyDataSource.map((list, index) => (
                             <Card variant="default" key={index}>
                                 <div className={styles.card_container_item} key={index}>

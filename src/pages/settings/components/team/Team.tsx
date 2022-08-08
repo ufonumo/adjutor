@@ -9,6 +9,8 @@ const Team = () => {
         <div>
             {width < 768 ? (
                 <div>
+                    <h3 className="heading3">Team</h3>
+
                     {teamDataSource.map((list, index) => (
                         <Card variant="default" key={index}>
                             <div key={index}>

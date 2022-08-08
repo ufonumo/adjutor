@@ -13,7 +13,12 @@ const Tables = ({ columns, dataSource, header }: TableProps) => {
                     Filter by <img src={filterIcon} alt="" />
                 </Button>
             </div>
-            <Table dataSource={dataSource} columns={columns} />
+            <Table
+                rowKey={(record) => record.uid}
+                bordered={false}
+                dataSource={dataSource}
+                columns={columns}
+            />
         </div>
     );
 };

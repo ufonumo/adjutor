@@ -51,6 +51,11 @@
                     flex-direction: column;
                     align-items: flex-start;
                 }
+                .select {
+                    @media screen and (max-width: 768px) {
+                        width: 100%;
+                    }
+                }
                 p {
                     margin: 0;
                     padding: 0;
@@ -95,7 +100,7 @@
         .card_footer {
             margin-top: 13rem;
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
             border-top: 1px solid #e0e0e0;
             padding-top: 1rem;
             button {
