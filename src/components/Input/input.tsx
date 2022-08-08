@@ -1,4 +1,4 @@
-import { ErrorMessage } from "formik";
+// import { ErrorMessage } from "formik";
 import styles from "./models/input.module.scss";
 import { InputProps } from "./models/interface";
 
@@ -33,13 +33,15 @@ const Input = ({
                     value={value}
                 />
             </div>
-            <ErrorMessage name={name}>
-                {(msg) => (
+            {/* <ErrorMessage
+                name={name}
+                render={(msg) => (
                     <div className="error">
+                        {" "}
                         {name} is {msg}
                     </div>
                 )}
-            </ErrorMessage>
+            /> */}
         </div>
     );
 };

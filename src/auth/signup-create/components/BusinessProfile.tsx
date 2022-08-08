@@ -1,4 +1,4 @@
-import { useFormikContext } from "formik";
+import { ErrorMessage, useFormikContext } from "formik";
 import Input from "../../../components/Input/input";
 import Select from "../../../components/Select/select";
 import { selectData } from "../models/selectData";
@@ -23,6 +23,10 @@ const BusinessProfile = () => {
                 label="Business Name "
             />
 
+            <ErrorMessage name="businessName">
+                {(msg) => <div className="error">This is {msg}</div>}
+            </ErrorMessage>
+
             <Select
                 name="role"
                 label="What’s your role ?"
@@ -32,6 +36,9 @@ const BusinessProfile = () => {
                     setFieldValue("role", e.target.value);
                 }}
             />
+            <ErrorMessage name="role">
+                {(msg) => <div className="error">This is {msg}</div>}
+            </ErrorMessage>
             <div className="marginTop">
                 <Select
                     name="adjutor"
@@ -42,6 +49,9 @@ const BusinessProfile = () => {
                         setFieldValue("adjutor", e.target.value);
                     }}
                 />
+                <ErrorMessage name="adjutor">
+                    {(msg) => <div className="error">this is {msg}</div>}
+                </ErrorMessage>
             </div>
         </div>
     );

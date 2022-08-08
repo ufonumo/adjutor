@@ -1,7 +1,7 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 1440px;
+    // max-width: 1440px;
     margin: 0 auto;
     overflow: hidden;
     @media screen and (max-width: 768px) {
@@ -13,7 +13,7 @@
     .right {
         padding: 2.5rem 4rem;
         background-image: var(--gradient);
-        height: 621px;
+        height: 100vh;
 
         @media screen and (max-width: 768px) {
             display: none;
@@ -60,6 +60,11 @@
             width: 85%;
             margin: 3rem auto 0 auto;
             padding: 1rem;
+            @media screen and (max-width: 768px) {
+                // padding: 0;
+                margin: 0;
+                width: 100%;
+            }
             .mobileLogo {
                 display: none;
                 @media screen and (max-width: 768px) {
@@ -85,7 +90,7 @@
             align-items: center;
             margin-top: 1rem;
             @media screen and (max-width: 768px) {
-                margin-top: 2rem;
+                margin-top: -2rem;
             }
             p {
                 display: inline-flex;

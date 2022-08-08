@@ -1,4 +1,4 @@
-import { useFormikContext } from "formik";
+import { ErrorMessage, useFormikContext } from "formik";
 import { useState } from "react";
 import Input from "../../../components/Input/input";
 import PasswordInput from "../../../components/PasswordInput/PasswordInput";
@@ -19,14 +19,17 @@ const Profile = () => {
             </div>
 
             <Input
-                type="email"
+                type="text"
                 name="fullName"
                 onChange={(e) => {
                     setFieldValue("fullName", e.target.value);
                 }}
                 placeholder="Full Name*"
-                label="Email *"
+                label="Full name *"
             />
+            <ErrorMessage name="fullName">
+                {(msg) => <div className="error">This is {msg}</div>}
+            </ErrorMessage>
             <Input
                 type="tel"
                 name="mobile"
@@ -36,7 +39,9 @@ const Profile = () => {
                 placeholder="Email"
                 label="Mobile *"
             />
-
+            <ErrorMessage name="mobile">
+                {(msg) => <div className="error">This is {msg}</div>}
+            </ErrorMessage>
             <Input
                 type="email"
                 name="workEmail"
@@ -46,6 +51,9 @@ const Profile = () => {
                 placeholder="workmail@email.com"
                 label="Work Email *"
             />
+            <ErrorMessage name="workEmail">
+                {(msg) => <div className="error">This is {msg}</div>}
+            </ErrorMessage>
             <PasswordInput
                 type="password"
                 name="password"

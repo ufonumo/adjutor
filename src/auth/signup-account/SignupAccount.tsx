@@ -103,7 +103,7 @@ export function FormikStepper({ children, ...props }: TWizardProps) {
                     <Form>
                         {currentChild}
 
-                        <div className="flex">
+                        <div className="btn_flex">
                             <Button
                                 variant="border"
                                 type="button"
@@ -111,12 +111,7 @@ export function FormikStepper({ children, ...props }: TWizardProps) {
                             >
                                 Back
                             </Button>{" "}
-                            <Button
-                                className="marginTop"
-                                variant="primary"
-                                type="submit"
-                                disabled={isSubmitting}
-                            >
+                            <Button variant="primary" type="submit" disabled={isSubmitting}>
                                 {step === 4 ? "Let's go" : "Proceed"}
                             </Button>
                         </div>

@@ -2,6 +2,7 @@ import Card from "../../components/Card/card";
 import styles from "./models/home.module.scss";
 
 import { homeData } from "./models/data";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -25,10 +26,14 @@ const Home = () => {
                             {list.submenu && (
                                 <div className={styles.submenu}>
                                     {list.submenu.map((sublist, index) => (
-                                        <div className={sublist.variant} key={index}>
+                                        <Link
+                                            to={sublist.path}
+                                            className={sublist.variant}
+                                            key={index}
+                                        >
                                             <p>{sublist.name}</p>
                                             <img src={sublist.icon} alt={sublist.name} />
-                                        </div>
+                                        </Link>
                                     ))}
                                 </div>
                             )}

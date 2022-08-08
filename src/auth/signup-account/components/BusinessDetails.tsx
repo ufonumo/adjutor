@@ -1,4 +1,4 @@
-import { useFormikContext } from "formik";
+import { ErrorMessage, useFormikContext } from "formik";
 import Input from "../../../components/Input/input";
 
 const BusinessDetails = () => {
@@ -19,6 +19,9 @@ const BusinessDetails = () => {
                 placeholder="Business  Name*"
                 label="Business Name "
             />
+            <ErrorMessage name="businessName">
+                {(msg) => <div className="error">This is {msg}</div>}
+            </ErrorMessage>
             <Input
                 type="text"
                 name="shortName"
@@ -28,7 +31,9 @@ const BusinessDetails = () => {
                 placeholder="Business short name**"
                 label="Business short name* "
             />
-
+            <ErrorMessage name="shortName">
+                {(msg) => <div className="error">This is {msg}</div>}
+            </ErrorMessage>
             <Input
                 type="email"
                 name="supportEmail"
@@ -38,8 +43,11 @@ const BusinessDetails = () => {
                 placeholder="Support email*"
                 label="Support email* "
             />
+            <ErrorMessage name="shortName">
+                {(msg) => <div className="error">This is {msg}</div>}
+            </ErrorMessage>
             <Input
-                type="email"
+                type="text"
                 name="website"
                 onChange={(e) => {
                     setFieldValue("website", e.target.value);
