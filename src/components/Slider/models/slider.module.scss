@@ -1,7 +1,7 @@
 .header {
     display: flex;
     align-items: center;
-    gap: 5rem;
+    justify-content: space-between;
     @media screen and (max-width: 320px) {
         gap: 2rem;
     }
@@ -20,4 +20,5 @@
 .slider_content {
     height: 100%;
     width: 100%;
+    overflow: auto;
 }

@@ -29,6 +29,7 @@ const Slider = ({ onClose, title, visible, children }: SliderInterface) => {
                     <div className={styles.header}>
                         <img onClick={onClose} src={backIcon} alt="back" />
                         <h1>{title}</h1>
+                        <div></div>
                     </div>
                 }
             >
