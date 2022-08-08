@@ -15,6 +15,12 @@
         background-image: var(--gradient);
         height: 100vh;
 
+        svg {
+            @media screen and (min-width: 2560px) {
+                margin-left: 4rem;
+            }
+        }
+
         @media screen and (max-width: 768px) {
             display: none;
             height: auto;
@@ -28,7 +34,7 @@
                 margin: 0 auto;
             }
 
-            @media screen and (max-width: 2560px) {
+            @media screen and (min-width: 2560px) {
                 margin-top: 3rem;
                 svg {
                     width: 100%;
